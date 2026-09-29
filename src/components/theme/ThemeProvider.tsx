@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useSyncExternalStore } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
 type Theme = 'dark' | 'light';
 
@@ -61,8 +62,17 @@ export function AppearanceSwitch() {
       type="button"
       onClick={toggleTheme}
       className="appearance-switch"
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} appearance`}
+      data-theme={theme}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-    />
+    >
+      <span className="appearance-switch__icon appearance-switch__icon--sun">
+        <Sun className="w-3 h-3" />
+      </span>
+      <span className="appearance-switch__icon appearance-switch__icon--moon">
+        <Moon className="w-3 h-3" />
+      </span>
+      <span className="appearance-switch__thumb" />
+    </button>
   );
 }

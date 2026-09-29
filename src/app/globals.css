@@ -12,7 +12,7 @@
   --content-padding: 32px;
   --header-corner: 20px;
 
-  /* Palette: Coral #FF7F50 Background, Obsidian Glass Cards & Ochre Gold #C49A45 Accents */
+  /* Palette: Coral #FF7F50 Background, Obsidian Glass Cards & Crisp White Action */
   --page-background: #FF7F50;
   --text-primary: #f8fafc;
   --text-secondary: rgba(248, 250, 252, 0.68);
@@ -22,9 +22,9 @@
   --surface-border: rgba(255, 255, 255, 0.12);
   --switch-track: rgba(255, 255, 255, 0.16);
 
-  /* Primary action surface (Warm Ochre Gold with dark ink text) */
-  --contrast-background: #C49A45;
-  --contrast-background-hover: #d8aa4e;
+  /* Primary action surface (Crisp High-Contrast White with Dark Obsidian Text) */
+  --contrast-background: #ffffff;
+  --contrast-background-hover: #f1f5f9;
   --contrast-text: #121619;
 
   /* Brand Accents */
@@ -33,6 +33,22 @@
   --accent-blue: #C49A45;
   --accent-coral: #FF7F50;
   --accent-glow: rgba(196, 154, 69, 0.25);
+}
+
+[data-theme="light"] {
+  --page-background: #FF7F50;
+  --text-primary: #121619;
+  --text-secondary: rgba(18, 22, 26, 0.7);
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-solid: #ffffff;
+  --surface-hover: rgba(255, 255, 255, 1);
+  --surface-border: rgba(0, 0, 0, 0.08);
+  --switch-track: rgba(0, 0, 0, 0.12);
+
+  /* In light mode, primary action surface flips to solid obsidian with white text */
+  --contrast-background: #121619;
+  --contrast-background-hover: #222a30;
+  --contrast-text: #ffffff;
 }
 
 /* Base resets & typography */
@@ -92,10 +108,10 @@ html.lenis, html.lenis body {
 
 /* Glassmorphism card base */
 .glass-card {
-  background: rgba(18, 22, 26, 0.86);
+  background: var(--surface);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--surface-border);
 }
 
 /* Viewport Frame with 4 corners */
@@ -138,13 +154,24 @@ html.lenis, html.lenis body {
   transform: rotate(270deg);
 }
 
-/* Header Carved in top-left */
-.site-header {
+/* Header sticky row spanning across full viewport width */
+.site-header-row {
   position: sticky;
   top: var(--page-inset);
   z-index: 100;
   height: 36px;
   margin-bottom: -36px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Header Carved in top-left */
+.site-header {
+  position: relative;
+  height: 36px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -155,6 +182,7 @@ html.lenis, html.lenis body {
   border-bottom-right-radius: var(--header-corner);
   padding: 4px 16px 12px 16px;
   font-size: 14px;
+  pointer-events: auto;
 }
 
 .site-header:after {
@@ -176,6 +204,45 @@ html.lenis, html.lenis body {
   width: 18px;
   height: 18px;
   background: radial-gradient(circle at 100% 100%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+/* Header Carved in top-right for Language Toggle */
+.site-header-right {
+  position: relative;
+  height: 36px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  background: var(--page-background);
+  color: #121619;
+  border-bottom-left-radius: var(--header-corner);
+  padding: 4px 16px 12px 16px;
+  font-size: 13px;
+  pointer-events: auto;
+}
+
+.site-header-right:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 0% 100%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+.site-header-right:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 0% 100%, transparent 17.5px, var(--page-background) 18px);
   pointer-events: none;
 }
 
@@ -261,34 +328,60 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Minimal textless language switch pill (matching previous appearance switch) */
-.lang-switch {
-  background: rgba(18, 22, 26, 0.18);
+/* Dark/Light Appearance Switch Pill */
+.appearance-switch {
+  background: rgba(18, 22, 26, 0.16);
   cursor: pointer;
   border-radius: 999px;
-  width: 32px;
-  height: 20px;
-  padding: 0;
+  width: 44px;
+  height: 22px;
+  padding: 2px 4px;
   position: relative;
   border: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
   transition: background-color 0.2s ease;
 }
 
-.lang-switch:after {
-  background: #121619;
-  content: "";
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+.appearance-switch__icon {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121619;
+  opacity: 0.45;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.lang-switch[data-lang="id"]:after {
-  transform: translateX(12px);
+.appearance-switch[data-theme="light"] .appearance-switch__icon--sun {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.appearance-switch[data-theme="dark"] .appearance-switch__icon--moon {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.appearance-switch__thumb {
+  background: #121619;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.appearance-switch[data-theme="dark"] .appearance-switch__thumb {
+  transform: translateX(22px);
 }
 
 /* Social Stack & Social Cards (matching Julian's editorial style) */
@@ -300,10 +393,10 @@ html.lenis, html.lenis body {
 
 .social-card {
   border-radius: var(--card-radius);
-  background: rgba(18, 22, 26, 0.86);
+  background: var(--surface);
   backdrop-filter: blur(20px) saturate(1.8);
   -webkit-backdrop-filter: blur(20px) saturate(1.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--surface-border);
   min-height: 58px;
   color: var(--text-primary);
   justify-content: space-between;
@@ -312,27 +405,27 @@ html.lenis, html.lenis body {
   font-size: 14px;
   line-height: 1.2;
   display: flex;
-  transition: background-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+  transition: background-color 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
 }
 
 .social-card:hover {
-  background: rgba(28, 34, 40, 0.95);
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.5);
+  background: var(--surface-hover);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.25);
 }
 
-/* Primary action card. The base .social-card border is a light hairline that
-   reads as a glowing outline on a saturated fill, so it is dropped here —
-   the fill alone carries the emphasis. */
+/* Primary action card (Crisp white in Dark mode, deep obsidian in Light mode) */
 .social-card--contact {
   background: var(--contrast-background);
   color: var(--contrast-text);
   border-color: transparent;
   font-weight: 500;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 .social-card--contact:hover {
   background: var(--contrast-background-hover);
   color: var(--contrast-text);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
 
 .social-card__icons {

@@ -3,6 +3,7 @@ import { ViewportFrame } from '@/components/layout/ViewportFrame';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
 import { CurtainLoader } from '@/components/layout/CurtainLoader';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import { getProfile } from '@/lib/data/portfolio';
 
 export default async function PublicLayout({
@@ -39,22 +40,24 @@ export default async function PublicLayout({
   };
 
   return (
-    <LanguageProvider>
-      <CurtainLoader />
-      <SmoothScroll />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ViewportFrame />
-      <div className="page-shell">
-        <Header
-          githubUrl={profile.github_url || undefined}
-          linkedinUrl={profile.linkedin_url || undefined}
-          resumeUrl={profile.resume_url || undefined}
+    <ThemeProvider>
+      <LanguageProvider>
+        <CurtainLoader />
+        <SmoothScroll />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <main className="page-content">{children}</main>
-      </div>
-    </LanguageProvider>
+        <ViewportFrame />
+        <div className="page-shell">
+          <Header
+            githubUrl={profile.github_url || undefined}
+            linkedinUrl={profile.linkedin_url || undefined}
+            resumeUrl={profile.resume_url || undefined}
+          />
+          <main className="page-content">{children}</main>
+        </div>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

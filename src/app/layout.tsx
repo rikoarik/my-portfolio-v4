@@ -63,12 +63,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistMono.variable} h-full antialiased`}
     >
       <head>
         <link rel="icon" href="/icon.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('ark_theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})()`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-[var(--page-background)] text-[var(--text-primary)]">
         {children}
