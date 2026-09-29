@@ -803,6 +803,476 @@ html.lenis, html.lenis body {
   transform: translateY(-18px);
 }
 
+/* ==========================================================================
+   About Page - Julian-style Structure
+   ========================================================================== */
+
+.about-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .about-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.about-portrait {
+  aspect-ratio: 61/70;
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+@media (min-width: 810px) {
+  .about-portrait {
+    aspect-ratio: auto;
+    height: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-portrait {
+    top: var(--page-inset);
+    height: calc(100svh - (var(--page-inset) * 2));
+    position: sticky;
+  }
+}
+
+.about-portrait__image {
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gap);
+  min-width: 0;
+}
+
+/* Profile + Social in About */
+.about-profile-social {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+}
+
+@media (min-width: 768px) {
+  .about-profile-social {
+    grid-template-columns: minmax(0, 1fr) clamp(220px, 18vw, 260px);
+  }
+}
+
+.about-social-stack {
+  display: grid;
+  gap: var(--layout-gap);
+}
+
+@media (max-width: 767px) {
+  .about-social-stack > .social-card:not(.social-card--contact) {
+    display: none;
+  }
+  .about-social-stack .social-card--contact {
+    height: 58px;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-social-stack {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: var(--layout-gap);
+    height: 100%;
+  }
+  .about-social-stack .social-card {
+    height: auto;
+  }
+}
+
+.about-profile-card {
+  padding: var(--content-padding);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.about-profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-profile-details h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.about-profile-details p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.about-profile-summary {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* About Cards */
+.about-card {
+  padding: var(--content-padding);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+}
+
+.about-biography,
+.about-competencies {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-biography h2,
+.about-competencies h2,
+.about-experience-intro h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.about-biography__copy {
+  display: grid;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-secondary);
+}
+
+.about-competencies__group {
+  display: grid;
+  gap: 14px;
+}
+
+.about-competencies h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-chips span {
+  background: var(--page-background);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1.2;
+  border: 1px solid var(--surface-border);
+}
+
+.about-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-languages > div {
+  background: var(--page-background);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1.2;
+  border: 1px solid var(--surface-border);
+}
+
+/* Worked with teams across */
+.about-partners {
+  min-width: 0;
+  padding: var(--content-padding);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .about-partners {
+    flex-direction: row;
+    align-items: center;
+    gap: 36px;
+    height: 116px;
+  }
+}
+
+.about-partners h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  flex: none;
+  width: 130px;
+}
+
+.about-partners__viewport {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10% 90%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 10% 90%, transparent 100%);
+}
+
+.about-partners__track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: 26s linear infinite about-logo-marquee;
+}
+
+.about-partners__track:hover {
+  animation-play-state: paused;
+}
+
+.about-partners__sequence {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+}
+
+.about-partners__item {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.about-partners__item:hover {
+  opacity: 1;
+  color: var(--text-primary);
+}
+
+@keyframes about-logo-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Experience Intro & Rows */
+.about-experience-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  gap: 20px;
+}
+
+.about-experience-intro h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.about-experience-intro p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--text-secondary);
+  max-width: 590px;
+}
+
+.about-experience {
+  display: grid;
+  gap: var(--layout-gap);
+}
+
+.about-experience > a,
+.about-experience > div,
+.about-experience__item {
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  min-height: 70px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 16.8px;
+  transition: background-color 0.16s ease;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+@media (min-width: 640px) {
+  .about-experience > a,
+  .about-experience > div,
+  .about-experience__item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.about-experience > a:hover,
+.about-experience > div:hover,
+.about-experience__item:hover {
+  background: var(--surface-hover);
+}
+
+.about-experience__role {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.about-experience__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 810px) {
+  .about-experience__meta {
+    display: grid;
+    grid-template-columns: max-content 0;
+    gap: 0;
+    align-items: center;
+    transition: grid-template-columns 0.16s ease, gap 0.16s ease;
+  }
+
+  .about-experience > a:hover .about-experience__meta,
+  .about-experience > a:focus-visible .about-experience__meta,
+  .about-experience__item:hover .about-experience__meta {
+    grid-template-columns: max-content 16px;
+    gap: 24px;
+  }
+}
+
+.about-experience__details {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.about-experience__organization {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.about-experience__period {
+  color: var(--text-secondary);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.about-experience__arrow {
+  color: var(--text-secondary);
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+  transition: opacity 0.16s ease, transform 0.16s ease, color 0.16s ease;
+}
+
+@media (max-width: 809px) {
+  .about-experience__arrow {
+    opacity: 0.6;
+  }
+}
+
+.about-experience > a:hover .about-experience__arrow,
+.about-experience > a:focus-visible .about-experience__arrow,
+.about-experience__item:hover .about-experience__arrow {
+  opacity: 1;
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
+/* Download CV Card (Julian & Ark aligned) */
+.home-ending__cv,
+.about-cv,
+.about-cv-card {
+  width: 100%;
+  height: 58px;
+  min-height: 58px;
+  border-radius: var(--card-radius);
+  background: var(--contrast-background);
+  color: var(--contrast-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.16s ease;
+  cursor: pointer;
+}
+
+.home-ending__cv:hover,
+.about-cv:hover,
+.about-cv-card:hover {
+  opacity: 0.92;
+}
+
+.home-ending__icons {
+  display: flex;
+  flex-direction: column;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.home-ending__icons svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.16s ease;
+}
+
+.home-ending__cv:hover .home-ending__icons svg,
+.home-ending__cv:focus-visible .home-ending__icons svg,
+.about-cv:hover .home-ending__icons svg,
+.about-cv:focus-visible .home-ending__icons svg,
+.about-cv-card:hover .home-ending__icons svg,
+.about-cv-card:focus-visible .home-ending__icons svg {
+  transform: translateY(-18px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
