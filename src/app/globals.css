@@ -854,6 +854,12 @@ html.lenis, html.lenis body {
   min-width: 0;
 }
 
+@media (min-width: 768px) {
+  .about-content {
+    padding-top: 54px;
+  }
+}
+
 /* Profile + Social in About */
 .about-profile-social {
   display: grid;
@@ -937,13 +943,6 @@ html.lenis, html.lenis body {
   background: var(--surface);
 }
 
-.about-biography,
-.about-competencies {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
 .about-card h2,
 .about-biography h2,
 .about-competencies h2,
@@ -953,6 +952,13 @@ html.lenis, html.lenis body {
   font-weight: 400;
   line-height: 1.2;
   color: var(--text-primary);
+}
+
+.about-biography,
+.about-competencies {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .about-biography__copy {
@@ -1098,7 +1104,6 @@ html.lenis, html.lenis body {
   100% { transform: translateX(-50%); }
 }
 
-/* Experience Intro & Rows */
 .about-experience-intro {
   display: flex;
   flex-direction: column;
@@ -1120,6 +1125,13 @@ html.lenis, html.lenis body {
   line-height: 24px;
   color: var(--text-secondary);
   max-width: 590px;
+}
+
+
+.about-experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .about-experience {
