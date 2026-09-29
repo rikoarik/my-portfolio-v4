@@ -1,20 +1,25 @@
+'use client';
+
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Experience } from '@/types/cms';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface HomeExperienceRowsProps {
   experiences: Experience[];
 }
 
 export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
+  const { lang, t } = useLanguage();
+
   return (
-    <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
+    <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6 shadow-md">
       <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">
-          Career Timeline
+          {lang === 'id' ? 'Pengalaman Kerja' : 'Career Timeline'}
         </h2>
         <span className="text-xs font-mono text-[var(--text-secondary)]">
-          Engineering History
+          {lang === 'id' ? 'Riwayat Rekayasa' : 'Engineering History'}
         </span>
       </div>
 
@@ -30,8 +35,8 @@ export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
                   {exp.role}
                 </span>
                 {exp.is_current && (
-                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    Present
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-[var(--accent-teal)]/10 text-[var(--accent-teal)] border border-[var(--accent-teal)]/25 font-medium">
+                    {t('home.present')}
                   </span>
                 )}
               </div>
@@ -42,9 +47,9 @@ export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
 
             <div className="flex items-center gap-3">
               <span className="text-xs font-mono text-[var(--text-secondary)] whitespace-nowrap">
-                {exp.start_date.slice(0, 4)} – {exp.is_current ? 'Present' : exp.end_date?.slice(0, 4)}
+                {exp.start_date.slice(0, 4)} – {exp.is_current ? t('home.present') : exp.end_date?.slice(0, 4)}
               </span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[var(--text-secondary)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-[var(--accent-teal)] opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
         ))}

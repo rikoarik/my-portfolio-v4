@@ -1,7 +1,7 @@
 import { Header } from '@/components/layout/Header';
 import { ViewportFrame } from '@/components/layout/ViewportFrame';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
-import { ThemeProvider } from '@/components/theme/ThemeProvider';
+import { LanguageProvider } from '@/context/LanguageContext';
 import { getProfile } from '@/lib/data/portfolio';
 
 export default async function PublicLayout({
@@ -38,21 +38,21 @@ export default async function PublicLayout({
   };
 
   return (
-    <ThemeProvider>
+    <LanguageProvider>
       <SmoothScroll />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <ViewportFrame />
-      <div className="page-shell flex flex-col">
+      <div className="page-shell">
         <Header
           githubUrl={profile.github_url || undefined}
           linkedinUrl={profile.linkedin_url || undefined}
           resumeUrl={profile.resume_url || undefined}
         />
-        <main className="flex-1 mt-[var(--layout-gap)]">{children}</main>
+        <main className="page-content">{children}</main>
       </div>
-    </ThemeProvider>
+    </LanguageProvider>
   );
 }

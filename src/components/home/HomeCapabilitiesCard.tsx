@@ -4,6 +4,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { SkillGroup, Skill } from '@/types/cms';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 interface HomeCapabilitiesCardProps {
   groups: SkillGroup[];
 }
@@ -17,24 +19,26 @@ const getLanguageDotColor = (name: string): string => {
   if (lower.includes('postgresql') || lower.includes('sql')) return '#336791';
   if (lower.includes('node') || lower.includes('fastify')) return '#5FA04E';
   if (lower.includes('php') || lower.includes('laravel')) return '#FF2D20';
-  return '#8B9A6E';
+  return '#249D8F';
 };
 
 export function HomeCapabilitiesCard({ groups }: HomeCapabilitiesCardProps) {
+  const { lang } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6"
+      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6 shadow-md"
     >
       <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">
-          Technical Competencies
+          {lang === 'id' ? 'Kompetensi Teknikal' : 'Technical Competencies'}
         </h2>
-        <span className="text-xs font-mono text-[var(--accent-cyan)]">
-          Engineering Matrix
+        <span className="text-xs font-mono text-[var(--accent-teal)]">
+          {lang === 'id' ? 'Matriks Rekayasa' : 'Engineering Matrix'}
         </span>
       </div>
 

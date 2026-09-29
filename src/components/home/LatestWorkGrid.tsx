@@ -7,11 +7,14 @@ import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Project } from '@/types/cms';
 
+import { useLanguage } from '@/context/LanguageContext';
+
 interface LatestWorkGridProps {
   projects: Project[];
 }
 
 export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
+  const { t } = useLanguage();
   const displayProjects = projects.slice(0, 4);
 
   return (
@@ -19,14 +22,14 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
       {/* Header Card */}
       <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm text-[var(--text-primary)]">
-          <span className="font-medium">Latest Work</span>
-          <ArrowDown className="w-3.5 h-3.5 text-[var(--accent-cyan)]" />
+          <span className="font-medium">{t('home.latest_work')}</span>
+          <ArrowDown className="w-3.5 h-3.5 text-[var(--accent-teal)]" />
         </div>
         <Link
           href="/work"
           className="text-xs uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors relative after:content-[''] after:block after:w-full after:h-px after:bg-current after:transition-all hover:after:w-4"
         >
-          View All
+          {t('home.view_all')}
         </Link>
       </div>
 
