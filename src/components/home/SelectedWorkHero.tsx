@@ -23,7 +23,6 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
-  const [isHovered, setIsHovered] = useState(false);
 
   const heroContainerRef = useRef<HTMLDivElement>(null);
   const slideImageRef = useRef<HTMLDivElement>(null);
@@ -49,37 +48,26 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
     goToSlide((currentIndex - 1 + total) % total, -1);
   }, [currentIndex, total, goToSlide]);
 
-  // GSAP Smooth Slide & Content Transition
+  // GSAP Smooth Slide & Content Transition (clean, no zoom, no mouse glitches)
   useEffect(() => {
     if (!heroContainerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1. Animate Slide Image with cinematic reveal (scale, blur + fade)
+      // 1. Animate Slide Image with clean fade and lateral shift (NO scale / NO idle zoom)
       if (slideImageRef.current) {
         gsap.fromTo(
           slideImageRef.current,
           {
             opacity: 0,
-            scale: 1.12,
-            x: direction * 40,
-            filter: 'blur(12px)',
+            x: direction * 28,
           },
           {
             opacity: 1,
-            scale: 1,
             x: 0,
-            filter: 'blur(0px)',
-            duration: 1.2,
-            ease: 'expo.out',
+            duration: 0.55,
+            ease: 'power2.out',
           }
         );
-
-        // Slow ambient drift while viewing
-        gsap.to(slideImageRef.current, {
-          scale: 1.04,
-          duration: SLIDE_DURATION + 1,
-          ease: 'sine.inOut',
-        });
       }
 
       // 2. Animate Text Elements with Stagger
@@ -87,16 +75,16 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
         gsap.fromTo(
           [roleBadgeRef.current, actionButtonRef.current],
           {
-            y: 18,
+            y: 14,
             opacity: 0,
           },
           {
             y: 0,
             opacity: 1,
-            duration: 0.6,
-            stagger: 0.08,
+            duration: 0.45,
+            stagger: 0.06,
             ease: 'power2.out',
-            delay: 0.12,
+            delay: 0.08,
           }
         );
       }
@@ -117,28 +105,13 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
             handleNext();
           },
         });
-
-        if (isHovered) {
-          progressTweenRef.current.pause();
-        }
       }
     }, heroContainerRef);
 
     return () => {
       ctx.revert();
     };
-  }, [currentIndex, direction, total, handleNext, isHovered]);
-
-  // Pause / Resume progress on hover
-  useEffect(() => {
-    if (progressTweenRef.current) {
-      if (isHovered) {
-        progressTweenRef.current.pause();
-      } else {
-        progressTweenRef.current.resume();
-      }
-    }
-  }, [isHovered]);
+  }, [currentIndex, direction, total, handleNext]);
 
   if (total === 0) return null;
 
@@ -147,8 +120,6 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
   return (
     <div
       ref={heroContainerRef}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       className="relative w-full h-[420px] sm:h-[480px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)] shadow-xl select-none"
     >
       {/* Slide Image Layer */}
