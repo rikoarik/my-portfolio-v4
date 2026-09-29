@@ -378,20 +378,6 @@ export default async function AboutPage() {
               ))}
             </div>
           </div>
-
-          <div className="about-competencies__group">
-            <h3>Language</h3>
-            <div className="about-languages">
-              <div>
-                <span>Indonesia</span>
-                <span className="text-[var(--text-secondary)] font-light">(Native)</span>
-              </div>
-              <div>
-                <span>English</span>
-                <span className="text-[var(--text-secondary)] font-light">(Professional Working Proficiency)</span>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* 4. WORKED WITH TEAMS ACROSS: Marquee Ticker */}
