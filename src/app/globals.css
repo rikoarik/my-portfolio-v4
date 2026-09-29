@@ -522,6 +522,287 @@ html.lenis, html.lenis body {
   min-width: 44px;
 }
 
+/* ==========================================================================
+   Work Page - Julian-style Interactive Split View
+   ========================================================================== */
+
+.work-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .work-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.work-preview {
+  display: none;
+  position: sticky;
+  top: var(--page-inset);
+  height: calc(100svh - (var(--page-inset) * 2));
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .work-preview {
+    display: block;
+  }
+}
+
+.work-preview__slides,
+.work-preview__slide {
+  position: absolute;
+  inset: 0;
+}
+
+.work-preview__slide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  transform: scale(1.02);
+}
+
+.work-preview__slide[data-active="true"] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.work-preview__image {
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.work-content {
+  min-width: 0;
+}
+
+.work-intro {
+  padding: 80px var(--content-padding) var(--content-padding);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 254px;
+  gap: 32px;
+}
+
+.work-intro h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.work-intro p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--text-secondary);
+  max-width: none;
+}
+
+.work-rows {
+  display: none;
+  gap: var(--layout-gap);
+  margin-top: var(--layout-gap);
+}
+
+@media (min-width: 1024px) {
+  .work-rows {
+    display: grid;
+  }
+}
+
+.work-row {
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  min-height: 70px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.16s ease;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.work-row:hover,
+.work-row[data-active="true"] {
+  background: var(--surface-hover);
+}
+
+.work-row h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-row__meta {
+  flex: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.work-row__meta span {
+  font-size: 14px;
+  line-height: 16.8px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.work-row__arrow {
+  opacity: 0;
+  width: 0;
+  height: 16px;
+  margin-left: -8px;
+  flex: none;
+  color: var(--text-primary);
+  transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              margin-left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.16s ease;
+}
+
+.work-row:hover .work-row__arrow,
+.work-row[data-active="true"] .work-row__arrow {
+  opacity: 1;
+  width: 16px;
+  margin-left: 16px;
+}
+
+/* Mobile cards */
+.work-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+  margin-top: var(--layout-gap);
+}
+
+@media (min-width: 640px) {
+  .work-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-cards {
+    display: none;
+  }
+}
+
+.work-card {
+  aspect-ratio: 3/4;
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.work-card__image {
+  object-fit: cover;
+  object-position: 50% 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.work-card__title {
+  z-index: 2;
+  background: var(--page-background);
+  color: var(--text-primary);
+  white-space: nowrap;
+  border-bottom-right-radius: 18px;
+  padding: 8px 16px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.work-card__title:before,
+.work-card__title:after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(circle at 100% 100%, transparent 17.5px, var(--page-background) 18px);
+}
+
+.work-card__title:before {
+  top: 0;
+  left: 100%;
+}
+
+.work-card__title:after {
+  top: 100%;
+  left: 0;
+}
+
+.work-contact {
+  width: 100%;
+  height: 58px;
+  margin-top: var(--layout-gap);
+  border-radius: var(--card-radius);
+  background: var(--contrast-background);
+  color: var(--contrast-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 16.8px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.work-contact:hover {
+  opacity: 0.92;
+}
+
+.work-contact__icons {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.work-contact__icons svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.work-contact:hover .work-contact__icons svg,
+.work-contact:focus-visible .work-contact__icons svg {
+  transform: translateY(-18px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

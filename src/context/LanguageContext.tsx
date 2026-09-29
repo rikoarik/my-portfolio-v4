@@ -46,6 +46,11 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.eyebrow': 'Engineering Biography',
     'about.title': 'About Ark',
+
+    // Work
+    'work.title': 'Work',
+    'work.subtitle': 'Selected production projects across mobile engineering, backend architectures, payment systems, and full-stack web platforms.',
+    'work.contact': 'Contact Me',
   },
   id: {
     // Navigation
@@ -81,6 +86,11 @@ const translations: Record<Language, Record<string, string>> = {
     // About
     'about.eyebrow': 'Biografi Teknikal',
     'about.title': 'Tentang Ark',
+
+    // Work
+    'work.title': 'Karya',
+    'work.subtitle': 'Kumpulan studi kasus proyek produksi di mobile engineering, arsitektur backend, sistem pembayaran, dan platform web full-stack.',
+    'work.contact': 'Hubungi Saya',
   },
 };
 
