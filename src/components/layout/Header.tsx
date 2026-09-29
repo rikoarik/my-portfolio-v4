@@ -165,21 +165,6 @@ export function Header({}: HeaderProps) {
               );
             })}
           </nav>
-
-          <div className="pt-4 mt-4 border-t border-[var(--switch-track)] flex items-center justify-between text-xs text-[var(--text-secondary)]">
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-xs uppercase text-[var(--text-secondary)]">Mode</span>
-              <AppearanceSwitch />
-            </div>
-            <button
-              type="button"
-              onClick={toggleLang}
-              className="font-mono text-xs uppercase px-2.5 py-1 rounded-md bg-[var(--surface-hover)] text-[var(--text-primary)] font-bold border border-[var(--surface-border)]"
-              aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
-            >
-              {lang === 'id' ? 'ID ➔ EN' : 'EN ➔ ID'}
-            </button>
-          </div>
         </div>
       )}
     </>
