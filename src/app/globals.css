@@ -21,8 +21,13 @@
   --surface-hover: rgba(238, 219, 184, 0.75);
   --surface-border: transparent;
   --switch-track: rgba(234, 214, 170, 0.7);
-  --contrast-background: #1a2421;
-  --contrast-text: #fdf0d5;
+  /* Primary action surface. Teal is the brand's primary, so the highest-
+     emphasis controls carry it rather than the near-black. Text on it is
+     ink, not cream: cream on #249d8f is only 2.96:1 and fails WCAG AA,
+     while ink clears it at 4.77:1. */
+  --contrast-background: #249d8f;
+  --contrast-background-hover: #3ab3a3;
+  --contrast-text: #1a2421;
 
   /* Brand Accents */
   --accent-teal: #249d8f;
@@ -315,15 +320,19 @@ html.lenis, html.lenis body {
   box-shadow: 0 4px 16px -4px rgba(36, 157, 143, 0.12);
 }
 
+/* Primary action card. The base .social-card border is a light hairline that
+   reads as a glowing outline on a saturated fill, so it is dropped here —
+   the fill alone carries the emphasis. */
 .social-card--contact {
   background: var(--contrast-background);
   color: var(--contrast-text);
+  border-color: transparent;
   font-weight: 500;
 }
 
 .social-card--contact:hover {
-  background: var(--accent-teal);
-  color: #ffffff;
+  background: var(--contrast-background-hover);
+  color: var(--contrast-text);
 }
 
 .social-card__icons {
@@ -351,6 +360,17 @@ html.lenis, html.lenis body {
 
 .social-card:hover .social-card__icon:not(.social-card__icon--arrow) {
   opacity: 0;
+}
+
+/* Mobile menu cards: the arrow is always visible (touch has no hover to
+   reveal it) and just nudges forward when a pointer does pass over. */
+.menu-card__arrow {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-card:hover .menu-card__arrow,
+.social-card:focus-visible .menu-card__arrow {
+  transform: translateX(4px);
 }
 
 /* Card hover animation with expanding arrow */

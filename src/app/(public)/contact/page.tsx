@@ -73,18 +73,13 @@ export default function ContactPage() {
       <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden glass-card">
         <GridPulse cell={22} reach={2.4} ambient={2} />
 
-        {/* Caption sits above the grid; the pulse holds its light back from
-            these lines via data-grid-avoid. */}
-        <div className="absolute inset-x-0 bottom-0 z-10 p-[var(--content-padding)] pointer-events-none">
+        {/* Identity, held clear of the grid's light by data-grid-avoid.
+            Sits bottom-left, opposite the badge, with its right side
+            reserved so the two never collide on a narrow panel. */}
+        <div className="absolute bottom-0 left-0 z-10 p-[var(--content-padding)] pr-[136px] pointer-events-none">
           <p
             data-grid-avoid
-            className="text-xs font-mono uppercase tracking-widest text-[var(--text-secondary)]"
-          >
-            {lang === 'id' ? 'Kontak' : 'Contact'}
-          </p>
-          <p
-            data-grid-avoid
-            className="mt-2 text-xl sm:text-2xl font-normal tracking-tight text-[var(--text-primary)]"
+            className="text-xl sm:text-2xl font-normal tracking-tight text-[var(--text-primary)]"
           >
             Arik Riko Prasetya
           </p>
@@ -94,6 +89,14 @@ export default function ContactPage() {
           >
             Software Engineer · Mobile · Backend · Full-stack
           </p>
+        </div>
+
+        {/* Notched caption on the media panel, as on Julian's contact hero.
+            The cut-out corners read as a notch in the panel. */}
+        <div className="card-badge-bottom-right">
+          <span className="font-medium text-xs tracking-tight">
+            {lang === 'id' ? 'Mari Terhubung' : "Let's Talk"}
+          </span>
         </div>
       </div>
 
@@ -177,7 +180,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full h-11 rounded-md bg-[var(--contrast-background)] text-[var(--contrast-text)] hover:bg-[var(--accent-teal)] transition-colors text-sm font-medium disabled:opacity-50 cursor-pointer"
+                className="w-full h-11 rounded-md bg-[var(--contrast-background)] text-[var(--contrast-text)] hover:bg-[var(--contrast-background-hover)] transition-colors text-sm font-medium disabled:opacity-50 cursor-pointer"
               >
                 {loading
                   ? (lang === 'id' ? 'Mengirim...' : 'Sending...')

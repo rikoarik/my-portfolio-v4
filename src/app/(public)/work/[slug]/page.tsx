@@ -104,12 +104,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2421]/70 via-transparent to-[#1a2421]/30 pointer-events-none" />
 
-        {/* Back Link at top left */}
+        {/* Back Link, bottom-right so the carved sticky header (top-left)
+            never sits on top of it. */}
         <Link
           href="/work"
-          className="absolute top-6 left-6 z-10 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/50 backdrop-blur-md text-white text-xs font-mono hover:bg-black/70 transition-colors"
+          className="absolute bottom-8 right-6 z-10 inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a2421]/70 backdrop-blur-md text-[#fdf0d5] text-xs font-mono hover:bg-[#249d8f] transition-colors"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>All Work</span>

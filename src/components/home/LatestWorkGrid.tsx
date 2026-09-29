@@ -73,7 +73,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
               )}
 
               {/* Bottom Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090a0e]/85 via-transparent to-transparent opacity-80 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a2421]/85 via-transparent to-transparent opacity-80 pointer-events-none" />
             </Link>
           </motion.div>
         ))}

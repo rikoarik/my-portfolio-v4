@@ -1,84 +1,84 @@
 <svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="750" fill="#F1F3F5"/>
+  <rect width="1200" height="750" fill="#f0efea"/>
 
   <!-- Browser Window Frame -->
   <g transform="translate(100, 70)">
-    <rect width="1000" height="600" rx="14" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
+    <rect width="1000" height="600" rx="14" fill="#ffffff" stroke="#e5e3dc" stroke-width="1"/>
     
     <!-- Title Bar -->
-    <rect width="1000" height="44" rx="14" fill="#FAFAFA"/>
-    <line x1="0" y1="44" x2="1000" y2="44" stroke="#E4E4E7" stroke-width="1"/>
+    <rect width="1000" height="44" rx="14" fill="#fafaf9"/>
+    <line x1="0" y1="44" x2="1000" y2="44" stroke="#e5e3dc" stroke-width="1"/>
     
-    <circle cx="24" cy="22" r="5" fill="#EF4444"/>
-    <circle cx="40" cy="22" r="5" fill="#F59E0B"/>
-    <circle cx="56" cy="22" r="5" fill="#10B981"/>
+    <circle cx="24" cy="22" r="5" fill="#e76f51"/>
+    <circle cx="40" cy="22" r="5" fill="#249d8f"/>
+    <circle cx="56" cy="22" r="5" fill="#249d8f"/>
 
-    <rect x="250" y="8" width="500" height="28" rx="6" fill="#F4F4F5"/>
-    <text x="430" y="26" fill="#71717A" font-family="-apple-system, sans-serif" font-size="12">crm.internal/sales/pipeline</text>
+    <rect x="250" y="8" width="500" height="28" rx="6" fill="#f4f3ee"/>
+    <text x="430" y="26" fill="#78827f" font-family="-apple-system, sans-serif" font-size="12">crm.internal/sales/pipeline</text>
 
     <!-- Sidebar -->
-    <rect x="0" y="45" width="200" height="555" fill="#0F172A"/>
-    <text x="24" y="85" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">CRM Flow</text>
+    <rect x="0" y="45" width="200" height="555" fill="#1a2421"/>
+    <text x="24" y="85" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">CRM Flow</text>
     
-    <rect x="16" y="110" width="168" height="34" rx="6" fill="#1E293B"/>
-    <text x="32" y="132" fill="#38BDF8" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Deals Pipeline</text>
+    <rect x="16" y="110" width="168" height="34" rx="6" fill="#1a2421"/>
+    <text x="32" y="132" fill="#5cb8ad" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Deals Pipeline</text>
 
-    <text x="32" y="172" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="13">Contacts</text>
-    <text x="32" y="210" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="13">Activities</text>
-    <text x="32" y="248" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="13">Role Settings</text>
+    <text x="32" y="172" fill="#96a09d" font-family="-apple-system, sans-serif" font-size="13">Contacts</text>
+    <text x="32" y="210" fill="#96a09d" font-family="-apple-system, sans-serif" font-size="13">Activities</text>
+    <text x="32" y="248" fill="#96a09d" font-family="-apple-system, sans-serif" font-size="13">Role Settings</text>
 
     <!-- Main Dashboard -->
     <g transform="translate(240, 70)">
       <!-- Metric Cards -->
       <g transform="translate(0, 0)">
-        <rect width="220" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <text x="16" y="28" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">ACTIVE LEADS</text>
-        <text x="16" y="56" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="20" font-weight="700">142 Accounts</text>
+        <rect width="220" height="74" rx="10" fill="#fafaf9" stroke="#e5e3dc"/>
+        <text x="16" y="28" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">ACTIVE LEADS</text>
+        <text x="16" y="56" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="20" font-weight="700">142 Accounts</text>
       </g>
 
       <g transform="translate(240, 0)">
-        <rect width="220" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <text x="16" y="28" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">IN PROPOSAL</text>
-        <text x="16" y="56" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="20" font-weight="700">28 Deals</text>
+        <rect width="220" height="74" rx="10" fill="#fafaf9" stroke="#e5e3dc"/>
+        <text x="16" y="28" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">IN PROPOSAL</text>
+        <text x="16" y="56" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="20" font-weight="700">28 Deals</text>
       </g>
 
       <g transform="translate(480, 0)">
-        <rect width="240" height="74" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <text x="16" y="28" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">BACKEND STACK</text>
-        <text x="16" y="56" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">NestJS + Supabase</text>
+        <rect width="240" height="74" rx="10" fill="#fafaf9" stroke="#e5e3dc"/>
+        <text x="16" y="28" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">BACKEND STACK</text>
+        <text x="16" y="56" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">NestJS + Supabase</text>
       </g>
 
       <!-- Pipeline Board -->
       <g transform="translate(0, 100)">
         <!-- Stage 1 -->
-        <rect width="220" height="380" rx="8" fill="#F1F5F9"/>
-        <text x="14" y="26" fill="#334155" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Discovery (3)</text>
+        <rect width="220" height="380" rx="8" fill="#f0efea"/>
+        <text x="14" y="26" fill="#3d4a47" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Discovery (3)</text>
         
-        <rect x="10" y="40" width="200" height="86" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
-        <text x="20" y="66" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Fintech Integration Lead</text>
-        <text x="20" y="84" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">Assigned: Commercial Agent</text>
-        <text x="20" y="106" fill="#2563EB" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Enterprise Tier</text>
+        <rect x="10" y="40" width="200" height="86" rx="8" fill="#ffffff" stroke="#e5e3dc"/>
+        <text x="20" y="66" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Fintech Integration Lead</text>
+        <text x="20" y="84" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11">Assigned: Commercial Agent</text>
+        <text x="20" y="106" fill="#249d8f" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Enterprise Tier</text>
 
         <!-- Stage 2 -->
         <g transform="translate(240, 0)">
-          <rect width="220" height="380" rx="8" fill="#F1F5F9"/>
-          <text x="14" y="26" fill="#334155" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Technical Review (2)</text>
+          <rect width="220" height="380" rx="8" fill="#f0efea"/>
+          <text x="14" y="26" fill="#3d4a47" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Technical Review (2)</text>
 
-          <rect x="10" y="40" width="200" height="86" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
-          <text x="20" y="66" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Payment Gateway Onboard</text>
-          <text x="20" y="84" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">Spec verification review</text>
-          <text x="20" y="106" fill="#D97706" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Swagger Verified</text>
+          <rect x="10" y="40" width="200" height="86" rx="8" fill="#ffffff" stroke="#e5e3dc"/>
+          <text x="20" y="66" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Payment Gateway Onboard</text>
+          <text x="20" y="84" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11">Spec verification review</text>
+          <text x="20" y="106" fill="#249d8f" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Swagger Verified</text>
         </g>
 
         <!-- Stage 3 -->
         <g transform="translate(480, 0)">
-          <rect width="240" height="380" rx="8" fill="#F1F5F9"/>
-          <text x="14" y="26" fill="#334155" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Contract Ready (2)</text>
+          <rect width="240" height="380" rx="8" fill="#f0efea"/>
+          <text x="14" y="26" fill="#3d4a47" font-family="-apple-system, sans-serif" font-size="12" font-weight="700">Contract Ready (2)</text>
 
-          <rect x="10" y="40" width="220" height="86" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
-          <text x="20" y="66" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">National Retail Group</text>
-          <text x="20" y="84" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">Multi-branch agreement</text>
-          <text x="20" y="106" fill="#16A34A" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Signed NDA</text>
+          <rect x="10" y="40" width="220" height="86" rx="8" fill="#ffffff" stroke="#e5e3dc"/>
+          <text x="20" y="66" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">National Retail Group</text>
+          <text x="20" y="84" fill="#78827f" font-family="-apple-system, sans-serif" font-size="11">Multi-branch agreement</text>
+          <text x="20" y="106" fill="#249d8f" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">Signed NDA</text>
         </g>
       </g>
     </g>
@@ -86,8 +86,8 @@
 
   <!-- Editorial Info Badge -->
   <g transform="translate(80, 680)">
-    <rect width="280" height="44" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1"/>
-    <text x="16" y="22" fill="#09090B" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">CRM Platform Architecture</text>
-    <text x="16" y="36" fill="#71717A" font-family="-apple-system, sans-serif" font-size="10">Next.js · NestJS · Supabase · JWT RBAC</text>
+    <rect width="280" height="44" rx="8" fill="#ffffff" stroke="#e5e3dc" stroke-width="1"/>
+    <text x="16" y="22" fill="#1a2421" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">CRM Platform Architecture</text>
+    <text x="16" y="36" fill="#78827f" font-family="-apple-system, sans-serif" font-size="10">Next.js · NestJS · Supabase · JWT RBAC</text>
   </g>
 </svg>

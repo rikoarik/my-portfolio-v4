@@ -81,7 +81,7 @@ export default async function AboutPage() {
           <div className="pt-4 flex flex-wrap gap-3 border-t border-white/15">
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--contrast-background)] text-[var(--contrast-text)] text-xs font-medium hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--contrast-background)] text-[var(--contrast-text)] text-xs font-medium hover:bg-[var(--contrast-background-hover)] transition-colors"
             >
               <Mail className="w-3.5 h-3.5" />
               <span>Contact Directly</span>
@@ -121,7 +121,7 @@ export default async function AboutPage() {
                       {exp.role}
                     </h3>
                     {exp.is_current && (
-                      <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span className="px-1.5 py-0.5 rounded text-[10px] bg-[var(--accent-teal)]/10 text-[var(--accent-teal)] border border-[var(--accent-teal)]/25">
                         Present
                       </span>
                     )}

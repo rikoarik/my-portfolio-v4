@@ -73,7 +73,7 @@ export function ExplorationGallery({ items }: ExplorationGalleryProps) {
               )}
 
               {/* Bottom Card Overlay with Description & Tag */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#090a0e]/95 via-[#090a0e]/30 to-transparent flex flex-col justify-end p-5 text-white z-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a2421]/95 via-[#1a2421]/30 to-transparent flex flex-col justify-end p-5 text-white z-2">
                 <div className="flex items-center gap-1.5 text-[11px] font-mono text-[var(--accent-cyan)] mb-1">
                   <GitBranch className="w-3 h-3" />
                   <span>{item.tag}</span>

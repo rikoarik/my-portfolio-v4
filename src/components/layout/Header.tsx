@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface HeaderProps {
@@ -89,65 +90,56 @@ export function Header({}: HeaderProps) {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay. The header stays above it, so its own
+          Menu/Close control is the only one — no duplicate brand row. */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-50 bg-[var(--page-background)]/98 backdrop-blur-lg p-6 flex flex-col justify-between md:hidden"
+          className="fixed inset-0 z-50 bg-[var(--page-background)]/95 backdrop-blur-xl px-6 pb-6 pt-16 flex flex-col md:hidden"
           role="dialog"
           aria-label="Mobile Navigation"
         >
-          <div className="flex items-center justify-between pt-3 border-b border-[var(--surface-border)] pb-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-[var(--accent-teal)] shrink-0 shadow-md">
-                <Image
-                  src="/images/profile/ark.jpg"
-                  alt="Arik Riko Prasetya"
-                  width={44}
-                  height={44}
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-[var(--text-primary)]">
-                  Arik Riko Prasetya
-                </p>
-                <p className="text-xs text-[var(--text-secondary)] font-mono">
-                  Software Engineer
-                </p>
-              </div>
+          <div className="flex items-center gap-3">
+            <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 shadow-md">
+              <Image
+                src="/images/profile/ark.jpg"
+                alt="Arik Riko Prasetya"
+                width={44}
+                height={44}
+                className="w-full h-full object-cover object-top"
+              />
             </div>
-            <button
-              type="button"
-              onClick={() => setMobileOpen(false)}
-              className="text-xs font-mono uppercase text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2"
-            >
-              {t('nav.close')} ✕
-            </button>
+            <div>
+              <p className="text-sm font-semibold text-[var(--text-primary)]">
+                Arik Riko Prasetya
+              </p>
+              <p className="text-xs text-[var(--text-secondary)] font-mono">
+                Software Engineer
+              </p>
+            </div>
           </div>
 
-          <nav className="flex flex-col gap-4 py-8">
-            <Link
-              href="/"
-              onClick={() => setMobileOpen(false)}
-              className="text-2xl font-light text-[var(--text-primary)] hover:text-[var(--accent-teal)] transition-colors flex items-center justify-between"
-            >
-              <span>Home</span>
-              <span className="text-sm font-mono text-[var(--text-secondary)]">→</span>
-            </Link>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl font-light text-[var(--text-primary)] hover:text-[var(--accent-teal)] transition-colors flex items-center justify-between"
-              >
-                <span>{link.label}</span>
-                <span className="text-sm font-mono text-[var(--text-secondary)]">→</span>
-              </Link>
-            ))}
+          <div className="flex-1" />
+
+          <nav className="social-stack">
+            {[{ label: 'Home', href: '/' }, ...navLinks].map((link) => {
+              const isContact = link.href === '/contact';
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`social-card ${isContact ? 'social-card--contact' : ''}`}
+                >
+                  <span>{link.label}</span>
+                  <span className="social-card__icons flex items-center justify-center">
+                    <ArrowRight className="w-[18px] h-[18px] menu-card__arrow" />
+                  </span>
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="pt-4 border-t border-[var(--switch-track)] flex items-center justify-between text-xs text-[var(--text-secondary)]">
+          <div className="pt-4 mt-4 border-t border-[var(--switch-track)] flex items-center text-xs text-[var(--text-secondary)]">
             <button
               type="button"
               onClick={toggleLang}
@@ -155,7 +147,6 @@ export function Header({}: HeaderProps) {
               data-lang={lang}
               aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
             />
-            <span className="font-mono text-[11px]">arkriko.com</span>
           </div>
         </div>
       )}
