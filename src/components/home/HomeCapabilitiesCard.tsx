@@ -31,13 +31,13 @@ export function HomeCapabilitiesCard({ groups }: HomeCapabilitiesCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6 shadow-md"
+      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] space-y-6 shadow-xs"
     >
-      <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
+      <div className="flex items-center justify-between pb-2">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">
           {lang === 'id' ? 'Kompetensi Teknikal' : 'Technical Competencies'}
         </h2>
-        <span className="text-xs font-mono text-[var(--accent-teal)]">
+        <span className="text-xs font-mono text-[var(--text-secondary)]">
           {lang === 'id' ? 'Matriks Rekayasa' : 'Engineering Matrix'}
         </span>
       </div>
@@ -49,29 +49,14 @@ export function HomeCapabilitiesCard({ groups }: HomeCapabilitiesCardProps) {
               {group.name}
             </h3>
             <div className="flex flex-wrap gap-2">
-              {(group.skills || []).map((skill: Skill) => {
-                const isPrimary = skill.level === 'primary';
-                const dotColor = getLanguageDotColor(skill.name);
-
-                return (
-                  <span
-                    key={skill.id}
-                    className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md border transition-all ${
-                      isPrimary
-                        ? 'bg-[var(--page-background)] text-[var(--text-primary)] border-[var(--surface-border)] font-medium hover:border-[var(--accent-cyan)]/40 shadow-sm'
-                        : 'bg-[var(--surface-hover)] text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)]'
-                    }`}
-                  >
-                    {isPrimary && (
-                      <span
-                        className="w-1.5 h-1.5 rounded-full shrink-0"
-                        style={{ backgroundColor: dotColor }}
-                      />
-                    )}
-                    <span>{skill.name}</span>
-                  </span>
-                );
-              })}
+              {(group.skills || []).map((skill: Skill) => (
+                <span
+                  key={skill.id}
+                  className="inline-flex items-center text-xs px-3 py-1.5 rounded-md bg-[var(--switch-track)] text-[var(--text-primary)] transition-all font-normal"
+                >
+                  {skill.name}
+                </span>
+              ))}
             </div>
           </div>
         ))}

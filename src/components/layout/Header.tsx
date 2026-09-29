@@ -17,11 +17,11 @@ export function Header({}: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { lang, toggleLang, t } = useLanguage();
 
-  const navLinks = [
+    const navLinks = [
     { label: t('nav.work'), href: '/work' },
     { label: t('nav.about'), href: '/about' },
     { label: t('nav.exploration'), href: '/exploration' },
-    { label: t('nav.contact'), href: '/#contact' },
+    { label: t('nav.contact'), href: '/contact' },
   ];
 
   return (
@@ -33,17 +33,17 @@ export function Header({}: HeaderProps) {
           className="flex items-center gap-2 text-[var(--text-primary)] hover:opacity-85 transition-opacity"
           aria-label="Ark Homepage"
         >
-          <div className="relative w-5 h-5 rounded-full overflow-hidden border border-[var(--surface-border)] shrink-0 shadow-xs">
+          <div className="relative w-4 h-4 rounded-full overflow-hidden shrink-0 shadow-xs">
             <Image
               src="/images/profile/ark.jpg"
               alt="Ark"
-              width={20}
-              height={20}
+              width={16}
+              height={16}
               className="w-full h-full object-cover object-top"
               priority
             />
           </div>
-          <span className="font-semibold text-[15px] tracking-tight text-[var(--text-primary)]">Ark</span>
+          <span className="font-medium text-[15px] tracking-tight text-[var(--text-primary)]">Ark</span>
         </Link>
 
         {/* Primary Desktop Navigation */}
@@ -52,13 +52,13 @@ export function Header({}: HeaderProps) {
             const isActive =
               link.href === '/'
                 ? pathname === '/'
-                : pathname.startsWith(link.href) && link.href !== '/#contact';
+                : pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`transition-colors hover:text-[var(--text-primary)] ${
-                  isActive ? 'text-[var(--text-primary)] font-semibold' : ''
+                  isActive ? 'text-[var(--text-primary)] font-medium' : ''
                 }`}
               >
                 {link.label}
@@ -67,22 +67,16 @@ export function Header({}: HeaderProps) {
           })}
         </nav>
 
-        {/* Controls: Language Switcher (EN / ID) & Mobile Toggle */}
-        <div className="flex items-center gap-2.5">
+        {/* Controls: Minimal Language Switcher Pill (No text) & Mobile Toggle */}
+        <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={toggleLang}
-            className="inline-flex items-center gap-1 h-6 px-2.5 rounded-full text-[11px] font-mono font-medium border border-[var(--surface-border)] bg-[var(--surface)] hover:border-[var(--accent-teal)] transition-all cursor-pointer shadow-xs"
-            aria-label="Toggle language between English and Indonesian"
-          >
-            <span className={lang === 'en' ? 'text-[var(--accent-teal)] font-bold' : 'text-[var(--text-secondary)] opacity-60'}>
-              EN
-            </span>
-            <span className="text-[var(--text-secondary)] opacity-35">/</span>
-            <span className={lang === 'id' ? 'text-[var(--accent-teal)] font-bold' : 'text-[var(--text-secondary)] opacity-60'}>
-              ID
-            </span>
-          </button>
+            className="lang-switch"
+            data-lang={lang}
+            aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
+            title={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
+          />
 
           <button
             type="button"
@@ -153,16 +147,14 @@ export function Header({}: HeaderProps) {
             ))}
           </nav>
 
-          <div className="pt-4 border-t border-[var(--surface-border)] flex items-center justify-between text-xs text-[var(--text-secondary)]">
+          <div className="pt-4 border-t border-[var(--switch-track)] flex items-center justify-between text-xs text-[var(--text-secondary)]">
             <button
               type="button"
               onClick={toggleLang}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--surface-border)] bg-[var(--surface)] font-mono"
-            >
-              <span className={lang === 'en' ? 'text-[var(--accent-teal)] font-bold' : 'opacity-60'}>EN</span>
-              <span>/</span>
-              <span className={lang === 'id' ? 'text-[var(--accent-teal)] font-bold' : 'opacity-60'}>ID</span>
-            </button>
+              className="lang-switch"
+              data-lang={lang}
+              aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
+            />
             <span className="font-mono text-[11px]">arkriko.com</span>
           </div>
         </div>

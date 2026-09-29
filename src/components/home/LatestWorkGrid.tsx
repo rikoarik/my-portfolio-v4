@@ -20,7 +20,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
   return (
     <div className="space-y-[var(--layout-gap)]">
       {/* Header Card */}
-      <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex items-center justify-between">
+      <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] flex items-center justify-between shadow-xs">
         <div className="flex items-center gap-2 text-sm text-[var(--text-primary)]">
           <span className="font-medium">{t('home.latest_work')}</span>
           <ArrowDown className="w-3.5 h-3.5 text-[var(--accent-teal)]" />
@@ -45,7 +45,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
           >
             <Link
               href={`/work/${project.slug}`}
-              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)] block group focus-visible:outline-none"
+              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] block group focus-visible:outline-none shadow-xs"
             >
               {/* Top-Left Inverted Cutout Badge */}
               <div className="card-badge-top-left">
@@ -53,7 +53,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
                   {project.title}
                 </span>
                 <span className="card-arrow inline-flex items-center">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[var(--accent-cyan)]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[var(--accent-teal)]" />
                 </span>
               </div>
 

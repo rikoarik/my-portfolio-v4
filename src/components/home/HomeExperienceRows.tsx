@@ -13,8 +13,8 @@ export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6 shadow-md">
-      <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
+    <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] space-y-6 shadow-xs">
+      <div className="flex items-center justify-between pb-2">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">
           {lang === 'id' ? 'Pengalaman Kerja' : 'Career Timeline'}
         </h2>
@@ -35,7 +35,7 @@ export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
                   {exp.role}
                 </span>
                 {exp.is_current && (
-                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-[var(--accent-teal)]/10 text-[var(--accent-teal)] border border-[var(--accent-teal)]/25 font-medium">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-[var(--switch-track)] text-[var(--text-primary)] font-medium">
                     {t('home.present')}
                   </span>
                 )}

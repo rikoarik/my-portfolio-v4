@@ -21,13 +21,13 @@ export function ProfileCard({ profile }: ProfileCardProps) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] relative flex flex-col justify-between gap-8 group hover:border-[var(--accent-teal)]/40 transition-colors shadow-lg"
+      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] relative flex flex-col justify-between gap-8 group transition-colors shadow-sm"
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-4">
           <div className="relative shrink-0">
             {profile.avatar_url ? (
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--accent-teal)]/30 shadow-md">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-sm">
                 <Image
                   src={profile.avatar_url}
                   alt={profile.full_name}
@@ -38,21 +38,15 @@ export function ProfileCard({ profile }: ProfileCardProps) {
                 />
               </div>
             ) : (
-              <div className="w-14 h-14 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center font-bold text-lg text-[var(--text-primary)] shrink-0 shadow-inner">
+              <div className="w-14 h-14 rounded-full bg-[var(--surface-hover)] flex items-center justify-center font-bold text-lg text-[var(--text-primary)] shrink-0">
                 A
               </div>
             )}
-            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-[var(--accent-teal)] border-2 border-[var(--surface)] shadow-xs" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-lg font-medium text-[var(--text-primary)] leading-snug">
-                {profile.full_name}
-              </h1>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--accent-teal)]/10 text-[var(--accent-teal)] border border-[var(--accent-teal)]/25 font-semibold">
-                ENGINEER
-              </span>
-            </div>
+            <h1 className="text-lg font-medium text-[var(--text-primary)] leading-snug">
+              {profile.full_name}
+            </h1>
             <p className="text-sm text-[var(--text-secondary)] font-mono text-xs pt-0.5">
               {profile.title} · {profile.descriptor}
             </p>
@@ -74,14 +68,12 @@ export function ProfileCard({ profile }: ProfileCardProps) {
           {lang === 'id' ? t('profile.tagline') : profile.tagline_primary}
         </p>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-[var(--surface-border)] text-xs font-mono text-[var(--text-secondary)]">
+        <div className="flex flex-wrap items-center justify-between gap-2 pt-2 text-xs font-mono text-[var(--text-secondary)]">
           <div className="flex items-center gap-2">
             <Cpu className="w-3.5 h-3.5 text-[var(--accent-teal)]" />
             <span>PT Teknologi Kartu Indonesia</span>
           </div>
-          <span className="text-[11px] text-[var(--accent-teal)] bg-[var(--accent-teal)]/10 px-2 py-0.5 rounded border border-[var(--accent-teal)]/20 font-medium">
-            Active · {t('home.present')}
-          </span>
+          <span>Indonesia</span>
         </div>
       </div>
     </motion.article>

@@ -12,7 +12,7 @@ export function HomeEndingCard() {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-[var(--layout-gap)]">
       <Link
         href="/work"
-        className="p-6 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group"
+        className="p-6 rounded-[var(--card-radius)] bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group shadow-xs"
       >
         <div className="flex items-center gap-3">
           <FolderGit2 className="w-4 h-4 text-[var(--accent-teal)]" />
@@ -25,7 +25,7 @@ export function HomeEndingCard() {
 
       <Link
         href="/exploration"
-        className="p-6 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group"
+        className="p-6 rounded-[var(--card-radius)] bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group shadow-xs"
       >
         <div className="flex items-center gap-3">
           <Compass className="w-4 h-4 text-[var(--accent-teal)]" />

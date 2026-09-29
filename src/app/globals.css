@@ -12,15 +12,15 @@
   --content-padding: 32px;
   --header-corner: 20px;
 
-  /* Color Hunt Palette: #249D8F (Teal), #E9C46A (Gold), #E76F51 (Coral), #FDF0D5 (Vanilla Cream) */
+  /* Color Hunt Palette: #249D8F, #E9C46A, #E76F51, #FDF0D5 */
   --page-background: #fdf0d5;
-  --text-primary: #182827;
-  --text-secondary: rgba(24, 40, 39, 0.72);
-  --surface: #ffffff;
-  --surface-hover: #f6e7ca;
-  --surface-border: rgba(36, 157, 143, 0.22);
-  --switch-track: rgba(36, 157, 143, 0.15);
-  --contrast-background: #182827;
+  --text-primary: #1a2421;
+  --text-secondary: rgba(26, 36, 33, 0.65);
+  --surface: #f4e5c3;
+  --surface-hover: #eedbb8;
+  --surface-border: transparent;
+  --switch-track: #ead6aa;
+  --contrast-background: #1a2421;
   --contrast-text: #fdf0d5;
 
   /* Brand Accents */
@@ -29,7 +29,7 @@
   --accent-blue: #249d8f;
   --accent-gold: #e9c46a;
   --accent-coral: #e76f51;
-  --accent-glow: rgba(36, 157, 143, 0.35);
+  --accent-glow: rgba(36, 157, 143, 0.25);
 }
 
 /* Base resets & typography */
@@ -71,11 +71,15 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Page shell with inset */
+/* Page shell with inset (No inner padding so child sticky starts flush at top) */
 .page-shell {
-  min-height: 100vh;
-  padding: var(--page-inset);
-  box-sizing: border-box;
+  min-height: calc(100svh - (var(--page-inset) * 2));
+  margin: var(--page-inset);
+  border-radius: var(--card-radius);
+  background: var(--page-background);
+  position: relative;
+  overflow: clip;
+  padding: 0;
 }
 
 /* Viewport Frame with 4 corners */
@@ -238,14 +242,106 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Card hover animation with expanding arrow & subtle cyber glow */
+/* Minimal textless language switch pill (matching previous appearance switch) */
+.lang-switch {
+  background: var(--switch-track);
+  cursor: pointer;
+  border-radius: 999px;
+  width: 32px;
+  height: 20px;
+  padding: 0;
+  position: relative;
+  border: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.lang-switch:after {
+  background: var(--text-primary);
+  content: "";
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.lang-switch[data-lang="id"]:after {
+  transform: translateX(12px);
+}
+
+/* Social Stack & Social Cards (matching Julian's editorial style) */
+.social-stack {
+  gap: var(--layout-gap);
+  display: grid;
+  grid-auto-rows: 58px;
+}
+
+.social-card {
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  min-height: 58px;
+  color: var(--text-primary);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 1.2;
+  display: flex;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.social-card:hover {
+  background: var(--surface-hover);
+}
+
+.social-card--contact {
+  background: var(--contrast-background);
+  color: var(--contrast-text);
+  font-weight: 500;
+}
+
+.social-card--contact:hover {
+  background: var(--accent-teal);
+  color: #ffffff;
+}
+
+.social-card__icons {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+
+.social-card__icon {
+  width: 18px;
+  height: 18px;
+  transition: opacity 0.16s ease;
+  position: absolute;
+  inset: 0;
+}
+
+.social-card__icon--arrow {
+  opacity: 0;
+}
+
+.social-card:hover .social-card__icon--arrow {
+  opacity: 1;
+}
+
+.social-card:hover .social-card__icon:not(.social-card__icon--arrow) {
+  opacity: 0;
+}
+
+/* Card hover animation with expanding arrow */
 .interactive-card {
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .interactive-card:hover {
-  border-color: rgba(139, 154, 110, 0.45);
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.35), 0 0 18px -2px rgba(139, 154, 110, 0.2);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
 }
 
 .interactive-card:hover .card-badge-top-left,
