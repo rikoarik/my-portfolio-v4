@@ -910,6 +910,7 @@ html.lenis, html.lenis body {
   gap: 24px;
 }
 
+.about-card h2,
 .about-biography h2,
 .about-competencies h2,
 .about-experience-intro h2 {
