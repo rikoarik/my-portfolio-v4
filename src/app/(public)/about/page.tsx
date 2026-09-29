@@ -367,45 +367,43 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* 3. TECHNICAL CAPABILITIES, AI WORKFLOW & LANGUAGES */}
-        <section className="about-card space-y-7" aria-labelledby="tech-capabilities-heading">
-          <div>
-            <h2 id="tech-capabilities-heading">Technical Capabilities</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-3">
-              {TECH_GROUPS.map((group) => (
-                <div key={group.category} className="space-y-2">
-                  <h3 className="text-[12px] font-mono uppercase tracking-wider text-[var(--text-primary)] font-medium">
-                    {group.category}
-                  </h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {group.items.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 text-[12px] rounded-[5px] bg-[var(--page-background)] text-[var(--text-secondary)] border border-[var(--surface-border)] font-normal leading-snug"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+        {/* 3. TECH STACK: Grouped Technology Presentation */}
+        <section className="about-card space-y-5" aria-labelledby="tech-capabilities-heading">
+          <h2 id="tech-capabilities-heading">Technical Capabilities</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-1">
+            {TECH_GROUPS.map((group) => (
+              <div key={group.category} className="space-y-2.5">
+                <h3 className="text-[12px] font-mono uppercase tracking-wider text-[var(--text-primary)] font-medium">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {group.items.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2.5 py-1 text-[12px] rounded-[5px] bg-[var(--page-background)] text-[var(--text-secondary)] border border-[var(--surface-border)] font-normal leading-snug"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </section>
 
-          {/* AI Engineering Workflow */}
-          <div className="pt-6 border-t border-[var(--surface-border)] space-y-3">
-            <h3 className="text-[14px] font-medium text-[var(--text-primary)] tracking-tight">
-              AI Engineering Workflow
-            </h3>
-            <p className="text-[13px] leading-[20px] text-[var(--text-secondary)]">
+        {/* 4. AI TOOLS & WORKFLOW: Capability-First, Secondary Tools */}
+        <section className="about-card space-y-4" aria-labelledby="ai-workflow-heading">
+          <h2 id="ai-workflow-heading">AI Engineering Workflow</h2>
+          <div className="space-y-4">
+            <p className="text-[14px] leading-[22px] text-[var(--text-secondary)]">
               AI tools and coding agents are an integral part of my engineering workflow—applied across system planning, architectural exploration, implementation, systematic debugging, refactoring, code review, and engineering automation. I prioritize technical capability, system integrity, and rigorous verification over indiscriminate code generation.
             </p>
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] pt-1">
-              <span className="text-[var(--text-primary)] font-medium font-mono text-[11px] uppercase tracking-wider mr-1">
+            <div className="pt-3 border-t border-[var(--surface-border)] flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[13px]">
+              <span className="text-[var(--text-primary)] font-medium font-mono text-[11.5px] uppercase tracking-wider mr-1">
                 Workflow Tools:
               </span>
               {AI_TOOLS.map((tool, idx) => (
-                <span key={tool} className="text-[var(--text-secondary)] flex items-center gap-2">
+                <span key={tool} className="text-[var(--text-secondary)] flex items-center gap-2.5">
                   <span>{tool}</span>
                   {idx < AI_TOOLS.length - 1 && (
                     <span className="text-[var(--surface-border)] select-none" aria-hidden="true">·</span>
@@ -414,20 +412,22 @@ export default async function AboutPage() {
               ))}
             </div>
           </div>
+        </section>
 
-          {/* Languages */}
-          <div className="pt-5 border-t border-[var(--surface-border)] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <h3 className="text-[12px] font-mono uppercase tracking-wider text-[var(--text-primary)] font-medium m-0">
+        {/* 5. LANGUAGES: Compact and Clean Dedicated Card */}
+        <section className="about-card !py-5" aria-labelledby="languages-heading">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h2 id="languages-heading" className="!text-[15px] font-medium text-[var(--text-primary)] font-mono uppercase tracking-wider">
               Languages
-            </h3>
-            <div className="flex flex-wrap gap-2">
+            </h2>
+            <div className="flex flex-wrap gap-2.5">
               {LANGUAGES.map((lang) => (
                 <div
                   key={lang.name}
-                  className="px-3 py-1 rounded-[5px] bg-[var(--page-background)] border border-[var(--surface-border)] text-[12.5px] flex items-center gap-2"
+                  className="px-3 py-1.5 rounded-[5px] bg-[var(--page-background)] border border-[var(--surface-border)] text-[13px] flex items-center gap-2"
                 >
                   <span className="font-medium text-[var(--text-primary)]">{lang.name}</span>
-                  <span className="text-[var(--text-secondary)] font-mono text-[11.5px]">
+                  <span className="text-[var(--text-secondary)] font-mono text-[12px]">
                     — {lang.proficiency}
                   </span>
                 </div>
@@ -436,7 +436,7 @@ export default async function AboutPage() {
           </div>
         </section>
 
-        {/* 4. EXPERIENCE: Intro Card & Timeline Rows */}
+        {/* 6. EXPERIENCE: Intro Card & Timeline Rows */}
         <section className="about-card about-experience-intro">
           <h2>Experience</h2>
           <p>
@@ -465,7 +465,7 @@ export default async function AboutPage() {
           ))}
         </section>
 
-        {/* 5. RESUME: Download My CV Button */}
+        {/* 7. RESUME: Download My CV Button */}
         <a
           className="home-ending__cv about-cv"
           href={profile.resume_url || '/resume/Arik_Riko_Prasetya_Software_Engineer.pdf'}
