@@ -1,7 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { ViewportFrame } from '@/components/layout/ViewportFrame';
 import { SmoothScroll } from '@/components/layout/SmoothScroll';
-import { CurtainLoader } from '@/components/layout/CurtainLoader';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import { getProfile } from '@/lib/data/portfolio';
@@ -42,7 +41,6 @@ export default async function PublicLayout({
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <CurtainLoader />
         <SmoothScroll />
         <script
           type="application/ld+json"
