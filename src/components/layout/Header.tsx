@@ -71,9 +71,38 @@ export function Header({}: HeaderProps) {
             })}
           </nav>
 
-          {/* Controls: Mode Switch & Mobile Toggle */}
+          {/* Controls: Mode Switch, Language Switcher & Mobile Toggle */}
           <div className="flex items-center gap-3">
             <AppearanceSwitch />
+
+            {/* Language Switcher (ID / EN) integrated seamlessly inside header */}
+            <button
+              type="button"
+              onClick={toggleLang}
+              className="inline-flex items-center gap-1 font-mono text-[11px] tracking-wider cursor-pointer text-[var(--text-primary)] px-2 py-1 rounded-full border border-[var(--surface-border)] bg-[var(--page-background)] hover:bg-[var(--surface-hover)] transition-colors"
+              aria-label={`Switch language. Currently ${lang.toUpperCase()}`}
+              title={`Switch language. Currently ${lang.toUpperCase()}`}
+            >
+              <span
+                className={
+                  lang === 'id'
+                    ? 'font-bold text-[var(--text-primary)]'
+                    : 'text-[var(--text-secondary)] opacity-60'
+                }
+              >
+                ID
+              </span>
+              <span className="text-[var(--text-secondary)] opacity-30">/</span>
+              <span
+                className={
+                  lang === 'en'
+                    ? 'font-bold text-[var(--text-primary)]'
+                    : 'text-[var(--text-secondary)] opacity-60'
+                }
+              >
+                EN
+              </span>
+            </button>
 
             <button
               type="button"
@@ -85,37 +114,6 @@ export function Header({}: HeaderProps) {
             </button>
           </div>
         </header>
-
-        {/* Right Carved Topbar: Language Switcher (ID / EN) in Pojok Kanan */}
-        <aside className="site-header-right" aria-label="Language selection">
-          <button
-            type="button"
-            onClick={toggleLang}
-            className="lang-corner-toggle inline-flex items-center gap-1 font-mono text-xs tracking-wider cursor-pointer text-[var(--text-primary)]"
-            aria-label={`Switch language. Currently ${lang.toUpperCase()}`}
-            title={`Switch language. Currently ${lang.toUpperCase()}`}
-          >
-            <span
-              className={`px-1.5 py-0.5 rounded transition-all ${
-                lang === 'id'
-                  ? 'font-bold text-[var(--contrast-text)] bg-[var(--contrast-background)] shadow-xs'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-              }`}
-            >
-              ID
-            </span>
-            <span className="text-[var(--text-secondary)] opacity-40">/</span>
-            <span
-              className={`px-1.5 py-0.5 rounded transition-all ${
-                lang === 'en'
-                  ? 'font-bold text-[var(--contrast-text)] bg-[var(--contrast-background)] shadow-xs'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-              }`}
-            >
-              EN
-            </span>
-          </button>
-        </aside>
       </div>
 
       {/* Mobile Menu Overlay */}

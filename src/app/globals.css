@@ -215,44 +215,7 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Header Carved in top-right for Language Toggle */
-.site-header-right {
-  position: relative;
-  height: 36px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  background: var(--page-background);
-  color: var(--text-primary);
-  border-bottom-left-radius: var(--header-corner);
-  padding: 4px 16px 12px 16px;
-  font-size: 13px;
-  pointer-events: auto;
-}
 
-.site-header-right:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 100%;
-  width: 18px;
-  height: 18px;
-  background: radial-gradient(circle at 0% 100%, transparent 17.5px, var(--page-background) 18px);
-  pointer-events: none;
-}
-
-.site-header-right:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 18px;
-  height: 18px;
-  background: radial-gradient(circle at 0% 100%, transparent 17.5px, var(--page-background) 18px);
-  pointer-events: none;
-}
 
 
 /* Inverted Badges */
