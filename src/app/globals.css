@@ -11,34 +11,34 @@
 html[data-theme="dark"],
 :root {
   color-scheme: dark;
-  --page-background: #090a0e;
-  --text-primary: #f8fafc;
-  --text-secondary: rgba(248, 250, 252, 0.65);
-  --surface: rgba(255, 255, 255, 0.038);
-  --surface-hover: rgba(255, 255, 255, 0.07);
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --switch-track: rgba(255, 255, 255, 0.12);
-  --contrast-background: #f8fafc;
-  --contrast-text: #090a0e;
-  --accent-cyan: #10b981;
-  --accent-indigo: #6366f1;
-  --accent-blue: #10b981;
+  --page-background: #131612;
+  --text-primary: #f7f2eb;
+  --text-secondary: rgba(247, 242, 235, 0.65);
+  --surface: rgba(247, 242, 235, 0.045);
+  --surface-hover: rgba(247, 242, 235, 0.08);
+  --surface-border: rgba(139, 154, 110, 0.22);
+  --switch-track: rgba(247, 242, 235, 0.16);
+  --contrast-background: #f7f2eb;
+  --contrast-text: #131612;
+  --accent-cyan: #9bb07d;
+  --accent-indigo: #8b9a6e;
+  --accent-blue: #9bb07d;
 }
 
 html[data-theme="light"] {
   color-scheme: light;
-  --page-background: #f4f5f8;
-  --text-primary: #090a0e;
-  --text-secondary: rgba(9, 10, 14, 0.65);
+  --page-background: #f7f2eb;
+  --text-primary: #23271e;
+  --text-secondary: rgba(35, 39, 30, 0.7);
   --surface: #ffffff;
-  --surface-hover: #f9fafb;
-  --surface-border: rgba(0, 0, 0, 0.075);
-  --switch-track: #e2e8f0;
-  --contrast-background: #090a0e;
-  --contrast-text: #ffffff;
-  --accent-cyan: #059669;
-  --accent-indigo: #4f46e5;
-  --accent-blue: #059669;
+  --surface-hover: #eae2d6;
+  --surface-border: #eae2d6;
+  --switch-track: #eae2d6;
+  --contrast-background: #23271e;
+  --contrast-text: #f7f2eb;
+  --accent-cyan: #728353;
+  --accent-indigo: #8b9a6e;
+  --accent-blue: #728353;
 }
 
 /* Base resets & typography */
@@ -278,8 +278,8 @@ html[data-theme="light"] .appearance-switch:after {
 }
 
 .interactive-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 18px -2px rgba(16, 185, 129, 0.12);
+  border-color: rgba(139, 154, 110, 0.45);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.35), 0 0 18px -2px rgba(139, 154, 110, 0.2);
 }
 
 .interactive-card:hover .card-badge-top-left,
