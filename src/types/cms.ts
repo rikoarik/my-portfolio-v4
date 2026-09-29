@@ -29,6 +29,7 @@ export interface SiteProfile {
   linkedin_url?: string | null;
   website_url?: string | null;
   resume_url?: string | null;
+  avatar_url?: string | null;
   avatar_media_id?: string | null;
   status: ContentStatus;
   updated_at?: string;

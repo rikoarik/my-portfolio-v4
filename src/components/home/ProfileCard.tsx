@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Cpu } from 'lucide-react';
 import { motion } from 'motion/react';
 import { SiteProfile } from '@/types/cms';
@@ -20,10 +21,23 @@ export function ProfileCard({ profile }: ProfileCardProps) {
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-4">
-          <div className="relative">
-            <div className="w-14 h-14 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center font-bold text-lg text-[var(--text-primary)] shrink-0 shadow-inner">
-              A
-            </div>
+          <div className="relative shrink-0">
+            {profile.avatar_url ? (
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[var(--surface-border)] shadow-md">
+                <Image
+                  src={profile.avatar_url}
+                  alt={profile.full_name}
+                  width={56}
+                  height={56}
+                  className="w-full h-full object-cover object-top"
+                  priority
+                />
+              </div>
+            ) : (
+              <div className="w-14 h-14 rounded-full bg-[var(--surface-hover)] border border-[var(--surface-border)] flex items-center justify-center font-bold text-lg text-[var(--text-primary)] shrink-0 shadow-inner">
+                A
+              </div>
+            )}
             <span className="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-[var(--page-background)]" />
           </div>
           <div>

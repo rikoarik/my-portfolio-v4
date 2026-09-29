@@ -28,11 +28,11 @@ export default async function AboutPage() {
       {/* LEFT COLUMN: Sticky Portrait Showcase */}
       <div className="relative w-full h-[450px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)]">
         <Image
-          src="/images/projects/puas-hub/cover.svg"
-          alt="Arik Riko Prasetya"
+          src={profile.avatar_url || '/images/profile/ark.jpg'}
+          alt={`${profile.full_name} - ${profile.title}`}
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top"
           sizes="(min-width: 1024px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />

@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { SiteProfile } from '@/types/cms';
 import { updateProfileAction } from '@/actions/cms';
-import { Save } from 'lucide-react';
+import { Save, User } from 'lucide-react';
 
 export function ProfileEditorForm({
   initialProfile,
@@ -33,6 +34,7 @@ export function ProfileEditorForm({
         linkedin_url: formData.linkedin_url || null,
         website_url: formData.website_url || null,
         resume_url: formData.resume_url || null,
+        avatar_url: formData.avatar_url || null,
       });
       setMessage({ type: 'success', text: 'Profile updated successfully and cache revalidated.' });
     } catch (err: unknown) {
@@ -57,6 +59,34 @@ export function ProfileEditorForm({
         </div>
       )}
 
+      {/* Avatar Showcase */}
+      <div className="bg-[#18181B] border border-[#27272A] rounded-xl p-6 flex flex-col sm:flex-row items-center gap-6">
+        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[#10B981] shrink-0 shadow-lg">
+          <Image
+            src={formData.avatar_url || '/images/profile/ark.jpg'}
+            alt={formData.full_name}
+            width={80}
+            height={80}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+        <div className="flex-1 space-y-1.5 w-full">
+          <label className="block text-xs font-mono text-[#A1A1AA] uppercase tracking-wider">
+            Profile Photo URL
+          </label>
+          <input
+            type="text"
+            value={formData.avatar_url || ''}
+            onChange={(e) => setFormData({ ...formData, avatar_url: e.target.value })}
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
+            placeholder="/images/profile/ark.jpg"
+          />
+          <p className="text-[11px] text-[#71717A]">
+            Active photo path. Displayed across homepage profile card and about page.
+          </p>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#18181B] border border-[#27272A] rounded-xl p-6">
         <div className="space-y-2">
           <label className="block text-xs font-mono text-[#A1A1AA] uppercase tracking-wider">
@@ -67,7 +97,7 @@ export function ProfileEditorForm({
             required
             value={formData.full_name}
             onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -80,7 +110,7 @@ export function ProfileEditorForm({
             required
             value={formData.title}
             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
           <p className="text-[11px] text-[#71717A]">
             Must remain: Software Engineer
@@ -96,7 +126,7 @@ export function ProfileEditorForm({
             required
             value={formData.descriptor}
             onChange={(e) => setFormData({ ...formData, descriptor: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
           <p className="text-[11px] text-[#71717A]">
             Standard: Mobile · Backend · Full-stack
@@ -112,7 +142,7 @@ export function ProfileEditorForm({
             required
             value={formData.tagline_primary}
             onChange={(e) => setFormData({ ...formData, tagline_primary: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -125,7 +155,7 @@ export function ProfileEditorForm({
             required
             value={formData.tagline_secondary}
             onChange={(e) => setFormData({ ...formData, tagline_secondary: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -138,7 +168,7 @@ export function ProfileEditorForm({
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -151,7 +181,7 @@ export function ProfileEditorForm({
             required
             value={formData.location}
             onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -163,7 +193,7 @@ export function ProfileEditorForm({
             type="url"
             value={formData.github_url || ''}
             onChange={(e) => setFormData({ ...formData, github_url: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
 
@@ -175,7 +205,7 @@ export function ProfileEditorForm({
             type="url"
             value={formData.linkedin_url || ''}
             onChange={(e) => setFormData({ ...formData, linkedin_url: e.target.value })}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#10B981]"
           />
         </div>
       </div>
@@ -184,7 +214,7 @@ export function ProfileEditorForm({
         <button
           type="submit"
           disabled={isSaving}
-          className="tap-target inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold transition-colors disabled:opacity-50"
+          className="tap-target inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-[#10B981] hover:bg-[#059669] text-white text-xs font-semibold transition-colors disabled:opacity-50"
         >
           {isSaving ? (
             <span>Saving Changes...</span>

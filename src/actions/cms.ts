@@ -82,6 +82,7 @@ const ProfileSchema = z.object({
   linkedin_url: z.string().url().optional().nullable(),
   website_url: z.string().url().optional().nullable(),
   resume_url: z.string().optional().nullable(),
+  avatar_url: z.string().optional().nullable(),
 });
 
 export async function updateProfileAction(data: z.infer<typeof ProfileSchema>) {

@@ -24,6 +24,7 @@ export const CANONICAL_PROFILE: SiteProfile = {
   linkedin_url: 'https://linkedin.com/in/arikriko',
   website_url: 'https://arikriko.com',
   resume_url: '/resume/Arik_Riko_Prasetya_Software_Engineer.pdf',
+  avatar_url: '/images/profile/ark.jpg',
   avatar_media_id: null,
   status: 'published',
 };
