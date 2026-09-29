@@ -49,11 +49,11 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
             >
               {/* Top-Left Inverted Cutout Badge */}
               <div className="card-badge-top-left">
-                <span className="font-medium text-sm text-[#121619]">
+                <span className="font-medium text-sm text-[var(--text-primary)]">
                   {project.title}
                 </span>
                 <span className="card-arrow inline-flex items-center">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#121619]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[var(--text-primary)]" />
                 </span>
               </div>
 
@@ -73,7 +73,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
               )}
 
               {/* Bottom Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#121619]/85 via-transparent to-transparent opacity-80 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-solid)]/85 via-transparent to-transparent opacity-80 pointer-events-none" />
             </Link>
           </motion.div>
         ))}

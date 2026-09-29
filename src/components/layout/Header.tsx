@@ -34,7 +34,7 @@ export function Header({}: HeaderProps) {
           {/* Brand with Ark's actual photo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-[#121619] hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-[var(--text-primary)] hover:opacity-80 transition-opacity"
             aria-label="Ark Homepage"
           >
             <div className="relative w-4 h-4 rounded-full overflow-hidden shrink-0 shadow-xs">
@@ -47,11 +47,11 @@ export function Header({}: HeaderProps) {
                 priority
               />
             </div>
-            <span className="font-semibold text-[15px] tracking-tight text-[#121619]">Ark</span>
+            <span className="font-semibold text-[15px] tracking-tight text-[var(--text-primary)]">Ark</span>
           </Link>
 
           {/* Primary Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-5 text-sm text-[#121619]/75">
+          <nav className="hidden md:flex items-center gap-5 text-sm text-[var(--text-secondary)]">
             {navLinks.map((link) => {
               const isActive =
                 link.href === '/'
@@ -61,8 +61,8 @@ export function Header({}: HeaderProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors hover:text-[#121619] ${
-                    isActive ? 'text-[#121619] font-bold' : ''
+                  className={`transition-colors hover:text-[var(--text-primary)] ${
+                    isActive ? 'text-[var(--text-primary)] font-bold' : ''
                   }`}
                 >
                   {link.label}
@@ -78,7 +78,7 @@ export function Header({}: HeaderProps) {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden text-xs uppercase tracking-wider text-[#121619]/80 hover:text-[#121619] font-medium transition-colors px-1 py-0.5"
+              className="md:hidden text-xs uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] font-medium transition-colors px-1 py-0.5"
               aria-label="Toggle mobile menu"
             >
               {mobileOpen ? t('nav.close') : t('nav.menu')}
@@ -91,25 +91,25 @@ export function Header({}: HeaderProps) {
           <button
             type="button"
             onClick={toggleLang}
-            className="lang-corner-toggle inline-flex items-center gap-1 font-mono text-xs tracking-wider cursor-pointer"
+            className="lang-corner-toggle inline-flex items-center gap-1 font-mono text-xs tracking-wider cursor-pointer text-[var(--text-primary)]"
             aria-label={`Switch language. Currently ${lang.toUpperCase()}`}
             title={`Switch language. Currently ${lang.toUpperCase()}`}
           >
             <span
               className={`px-1.5 py-0.5 rounded transition-all ${
                 lang === 'id'
-                  ? 'font-bold text-[#121619] bg-black/15 shadow-xs'
-                  : 'text-[#121619]/60 hover:text-[#121619]'
+                  ? 'font-bold text-[var(--contrast-text)] bg-[var(--contrast-background)] shadow-xs'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               ID
             </span>
-            <span className="text-[#121619]/30">/</span>
+            <span className="text-[var(--text-secondary)] opacity-40">/</span>
             <span
               className={`px-1.5 py-0.5 rounded transition-all ${
                 lang === 'en'
-                  ? 'font-bold text-[#121619] bg-black/15 shadow-xs'
-                  : 'text-[#121619]/60 hover:text-[#121619]'
+                  ? 'font-bold text-[var(--contrast-text)] bg-[var(--contrast-background)] shadow-xs'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               EN
@@ -168,13 +168,13 @@ export function Header({}: HeaderProps) {
 
           <div className="pt-4 mt-4 border-t border-[var(--switch-track)] flex items-center justify-between text-xs text-[var(--text-secondary)]">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs uppercase text-[#121619]/70">Mode</span>
+              <span className="font-mono text-xs uppercase text-[var(--text-secondary)]">Mode</span>
               <AppearanceSwitch />
             </div>
             <button
               type="button"
               onClick={toggleLang}
-              className="font-mono text-xs uppercase px-2.5 py-1 rounded-md bg-black/10 text-[#121619] font-bold"
+              className="font-mono text-xs uppercase px-2.5 py-1 rounded-md bg-[var(--surface-hover)] text-[var(--text-primary)] font-bold border border-[var(--surface-border)]"
               aria-label={`Switch to ${lang === 'en' ? 'Indonesian' : 'English'}`}
             >
               {lang === 'id' ? 'ID ➔ EN' : 'EN ➔ ID'}

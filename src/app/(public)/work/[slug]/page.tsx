@@ -104,12 +104,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#121619]/70 via-transparent to-[#121619]/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-solid)]/70 via-transparent to-[var(--surface-solid)]/30 pointer-events-none" />
 
         {/* Back Link: positioned top-right for high visibility and clean separation from bottom badges */}
         <Link
           href="/work"
-          className="absolute top-5 right-5 sm:top-6 sm:right-6 z-20 inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[#121619]/80 hover:bg-[var(--accent-teal)] hover:text-[#121619] backdrop-blur-md text-[#f8fafc] text-xs font-mono transition-all shadow-lg border border-white/10 active:scale-95"
+          className="absolute top-5 right-5 sm:top-6 sm:right-6 z-20 inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-[var(--surface-solid)]/80 hover:bg-[var(--contrast-background)] hover:text-[var(--contrast-text)] backdrop-blur-md text-[var(--text-primary)] text-xs font-mono transition-all shadow-lg border border-[var(--surface-border)] active:scale-95"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>All Work</span>
@@ -144,7 +144,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         {/* Bottom Right Cutout Badge */}
         <div className="card-badge-bottom-right">
-          <span className="font-medium text-xs tracking-tight text-[#121619]">Case Study</span>
+          <span className="font-medium text-xs tracking-tight text-[var(--text-primary)]">Case Study</span>
         </div>
       </div>
 

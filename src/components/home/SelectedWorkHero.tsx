@@ -149,7 +149,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
       ref={heroContainerRef}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full h-[420px] sm:h-[480px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[#121619] shadow-xl select-none"
+      className="relative w-full h-[420px] sm:h-[480px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)] shadow-xl select-none"
     >
       {/* Slide Image Layer */}
       <div className="absolute inset-0 overflow-hidden">
@@ -176,7 +176,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
       </div>
 
       {/* Deep cinematic gradient overlay with reinforced bottom contrast */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#121619]/95 via-[#121619]/30 to-transparent pointer-events-none z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface-solid)]/95 via-[var(--surface-solid)]/30 to-transparent pointer-events-none z-[1]" />
 
       {/* Slide Navigation Arrows */}
       {total > 1 && (
@@ -188,7 +188,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
               handlePrev();
             }}
             aria-label="Previous project preview"
-            className="pointer-events-auto tap-target w-10 h-10 rounded-full bg-[#121619]/80 hover:bg-[#121619] backdrop-blur-md text-[#f8fafc]/90 hover:text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
+            className="pointer-events-auto tap-target w-10 h-10 rounded-full bg-[var(--surface-solid)]/80 hover:bg-[var(--surface-solid)] backdrop-blur-md text-[var(--text-primary)] flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -199,7 +199,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
               handleNext();
             }}
             aria-label="Next project preview"
-            className="pointer-events-auto tap-target w-10 h-10 rounded-full bg-[#121619]/80 hover:bg-[#121619] backdrop-blur-md text-[#f8fafc]/90 hover:text-white flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
+            className="pointer-events-auto tap-target w-10 h-10 rounded-full bg-[var(--surface-solid)]/80 hover:bg-[var(--surface-solid)] backdrop-blur-md text-[var(--text-primary)] flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-xl"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -211,7 +211,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
         {currentProject.role && (
           <div
             ref={roleBadgeRef}
-            className="inline-flex items-center w-fit px-2.5 py-1 rounded-md bg-[#121619]/90 backdrop-blur-md shadow-sm"
+            className="inline-flex items-center w-fit px-2.5 py-1 rounded-md bg-[var(--surface-solid)]/90 backdrop-blur-md shadow-sm"
           >
             <span className="text-[11px] font-mono uppercase tracking-widest text-[var(--accent-teal)] font-medium">
               {currentProject.role}
@@ -222,7 +222,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
         <Link
           ref={actionButtonRef}
           href={`/work/${currentProject.slug}`}
-          className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-[#121619]/90 hover:bg-[#121619] backdrop-blur-md text-[#f8fafc] text-sm font-medium transition-all group shadow-xl w-fit max-w-full"
+          className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg bg-[var(--surface-solid)]/90 hover:bg-[var(--surface-solid)] backdrop-blur-md text-[var(--text-primary)] text-sm font-medium transition-all group shadow-xl w-fit max-w-full"
         >
           <span className="truncate">{currentProject.title}</span>
           <ArrowUpRight className="w-3.5 h-3.5 text-[var(--accent-teal)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
@@ -231,7 +231,7 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
 
       {/* Bottom Center: Pagination with GSAP Progress Bar */}
       {total > 1 && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#121619]/85 backdrop-blur-md shadow-md">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--surface-solid)]/85 backdrop-blur-md shadow-md">
           {featured.map((p, idx) => {
             const isActive = idx === currentIndex;
             return (
@@ -257,9 +257,9 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
         </div>
       )}
 
-      {/* Bottom Right: Inverted Cutout Badge (Clean, dark ink on coral background) */}
+      {/* Bottom Right: Inverted Cutout Badge */}
       <div className="card-badge-bottom-right">
-        <span className="font-medium text-sm tracking-tight text-[#121619]">
+        <span className="font-medium text-sm tracking-tight text-[var(--text-primary)]">
           {t('hero.selected_work')}
         </span>
       </div>
