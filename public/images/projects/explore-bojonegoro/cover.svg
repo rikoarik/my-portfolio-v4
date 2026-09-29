@@ -1,0 +1,91 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#F4F4F1"/>
+
+  <!-- Left Phone (Destination Guide Screen) -->
+  <g transform="translate(240, 70)">
+    <rect width="320" height="620" rx="38" fill="#18181B"/>
+    <rect x="8" y="8" width="304" height="604" rx="32" fill="#27272A"/>
+    <rect x="14" y="14" width="292" height="592" rx="26" fill="#FFFFFF"/>
+
+    <rect x="110" y="22" width="90" height="20" rx="10" fill="#18181B"/>
+
+    <!-- App Header -->
+    <text x="28" y="68" fill="#18181B" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Explore Bojonegoro</text>
+    <text x="28" y="86" fill="#71717A" font-family="-apple-system, sans-serif" font-size="11">Discover Nature &amp; Culture</text>
+
+    <!-- Search Bar -->
+    <rect x="24" y="102" width="244" height="38" rx="10" fill="#F4F4F5"/>
+    <text x="44" y="126" fill="#A1A1AA" font-family="-apple-system, sans-serif" font-size="11">Search destinations, heritage...</text>
+
+    <!-- Destination Card 1 -->
+    <rect x="24" y="154" width="244" height="150" rx="14" fill="#047857"/>
+    <rect x="24" y="154" width="244" height="150" rx="14" fill="url(#natureGrad)"/>
+    <text x="40" y="244" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Kayangan Api</text>
+    <text x="40" y="262" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="11">Eternal geological flame site</text>
+    <rect x="40" y="274" width="60" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="48" y="287" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Heritage</text>
+
+    <!-- Destination Card 2 -->
+    <rect x="24" y="318" width="244" height="130" rx="14" fill="#0369A1"/>
+    <rect x="24" y="318" width="244" height="130" rx="14" fill="url(#waterGrad)"/>
+    <text x="40" y="394" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">Waduk Pacal</text>
+    <text x="40" y="412" fill="#E2E8F0" font-family="-apple-system, sans-serif" font-size="11">Historical reservoir &amp; scenery</text>
+    <rect x="40" y="424" width="50" height="18" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <text x="48" y="437" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="9" font-weight="600">Nature</text>
+
+    <!-- Offline Sync Banner -->
+    <rect x="24" y="464" width="244" height="42" rx="10" fill="#F0FDF4" stroke="#DCFCE7"/>
+    <text x="40" y="489" fill="#15803D" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Offline SQLite Cache Active</text>
+  </g>
+
+  <!-- Right Phone (Interactive Map View) -->
+  <g transform="translate(620, 100)">
+    <rect width="320" height="580" rx="38" fill="#18181B"/>
+    <rect x="8" y="8" width="304" height="564" rx="32" fill="#27272A"/>
+    <rect x="14" y="14" width="292" height="552" rx="26" fill="#F1F5F9"/>
+
+    <rect x="110" y="22" width="90" height="20" rx="10" fill="#18181B"/>
+
+    <!-- Map Graphic Mockup -->
+    <!-- Roads & Geometry -->
+    <path d="M 20 180 Q 150 140 280 200" stroke="#CBD5E1" stroke-width="12" fill="none"/>
+    <path d="M 120 40 L 120 500" stroke="#CBD5E1" stroke-width="10" fill="none"/>
+    <path d="M 40 380 Q 160 360 280 420" stroke="#E2E8F0" stroke-width="14" fill="none"/>
+
+    <!-- Pin 1 -->
+    <circle cx="160" cy="180" r="16" fill="#EF4444"/>
+    <circle cx="160" cy="180" r="6" fill="#FFFFFF"/>
+
+    <!-- Pin 2 -->
+    <circle cx="120" cy="360" r="16" fill="#2563EB"/>
+    <circle cx="120" cy="360" r="6" fill="#FFFFFF"/>
+
+    <!-- Map Info Card Bottom Sheet -->
+    <g transform="translate(24, 380)">
+      <rect width="244" height="110" rx="14" fill="#FFFFFF" stroke="#E2E8F0"/>
+      <text x="20" y="32" fill="#18181B" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Selected: Kayangan Api</text>
+      <text x="20" y="52" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11">Ngandong, Bojonegoro</text>
+      <rect x="20" y="68" width="204" height="30" rx="6" fill="#0F172A"/>
+      <text x="80" y="88" fill="#FFFFFF" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Start Navigation</text>
+    </g>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="natureGrad" x1="24" y1="154" x2="268" y2="304" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#065F46"/>
+      <stop offset="1" stop-color="#047857"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="24" y1="318" x2="268" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0369A1"/>
+      <stop offset="1" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Editorial Info Badge -->
+  <g transform="translate(80, 680)">
+    <rect width="280" height="44" rx="8" fill="#FFFFFF" stroke="#DDDBCF" stroke-width="1"/>
+    <text x="16" y="22" fill="#09090B" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Explore Bojonegoro</text>
+    <text x="16" y="36" fill="#71717A" font-family="-apple-system, sans-serif" font-size="10">Kotlin · Android Native · Mapbox · Firebase</text>
+  </g>
+</svg>

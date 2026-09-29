@@ -1,0 +1,105 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#F0EFEA"/>
+  
+  <g opacity="0.3">
+    <line x1="200" y1="0" x2="200" y2="750" stroke="#DDDBCF" stroke-width="1"/>
+    <line x1="700" y1="0" x2="700" y2="750" stroke="#DDDBCF" stroke-width="1"/>
+  </g>
+
+  <!-- Left Phone (Tenant A - Navy Brand Theme) -->
+  <g transform="translate(180, 80)">
+    <rect width="320" height="620" rx="38" fill="#0F172A"/>
+    <rect x="8" y="8" width="304" height="604" rx="32" fill="#1E293B"/>
+    <rect x="14" y="14" width="292" height="592" rx="26" fill="#F8FAFC"/>
+
+    <!-- Dynamic Island -->
+    <rect x="110" y="22" width="90" height="20" rx="10" fill="#0F172A"/>
+
+    <!-- App Header -->
+    <text x="28" y="68" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Metro Club</text>
+    <rect x="220" y="52" width="44" height="24" rx="12" fill="#E2E8F0"/>
+    <text x="228" y="68" fill="#475569" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">VIP</text>
+
+    <!-- Virtual Card -->
+    <rect x="24" y="92" width="244" height="140" rx="16" fill="url(#cardGradA)"/>
+    <text x="44" y="124" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">VIRTUAL MEMBER CARD</text>
+    <text x="44" y="156" fill="#F8FAFC" font-family="monospace" font-size="16" font-weight="700">9402 •••• •••• 8812</text>
+    <text x="44" y="196" fill="#F1F5F9" font-family="-apple-system, sans-serif" font-size="12" font-weight="500">Ark Prasetya</text>
+    <text x="200" y="196" fill="#CBD5E1" font-family="-apple-system, sans-serif" font-size="11">08/28</text>
+
+    <!-- QRIS Scanner Button -->
+    <rect x="24" y="248" width="244" height="60" rx="14" fill="#0F172A"/>
+    <rect x="40" y="262" width="32" height="32" rx="8" fill="#334155"/>
+    <text x="84" y="278" fill="#F8FAFC" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Scan QRIS Payment</text>
+    <text x="84" y="296" fill="#94A3B8" font-family="-apple-system, sans-serif" font-size="10">Pay at 1,000+ national merchants</text>
+
+    <!-- Quick Services -->
+    <text x="28" y="342" fill="#64748B" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">MEMBER SERVICES</text>
+    
+    <rect x="24" y="356" width="116" height="64" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="36" y="384" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Rewards</text>
+    <text x="36" y="402" fill="#16A34A" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">4,200 Pts</text>
+
+    <rect x="152" y="356" width="116" height="64" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="164" y="384" fill="#0F172A" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Coupons</text>
+    <text x="164" y="402" fill="#2563EB" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">3 Available</text>
+  </g>
+
+  <!-- Right Phone (Tenant B - Dark Amber Brand Theme) -->
+  <g transform="translate(560, 60)">
+    <rect width="320" height="620" rx="38" fill="#1C1917"/>
+    <rect x="8" y="8" width="304" height="604" rx="32" fill="#292524"/>
+    <rect x="14" y="14" width="292" height="592" rx="26" fill="#FAFAF9"/>
+
+    <rect x="110" y="22" width="90" height="20" rx="10" fill="#1C1917"/>
+
+    <text x="28" y="68" fill="#1C1917" font-family="-apple-system, sans-serif" font-size="16" font-weight="700">Retail Perks</text>
+    <rect x="200" y="52" width="64" height="24" rx="12" fill="#FEF3C7"/>
+    <text x="210" y="68" fill="#D97706" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">PLATINUM</text>
+
+    <!-- Virtual Card -->
+    <rect x="24" y="92" width="244" height="140" rx="16" fill="url(#cardGradB)"/>
+    <text x="44" y="124" fill="#E7E5E4" font-family="-apple-system, sans-serif" font-size="10" font-weight="600">MULTI-BRAND PERKS</text>
+    <text x="44" y="156" fill="#FFFFFF" font-family="monospace" font-size="16" font-weight="700">7710 •••• •••• 1920</text>
+    <text x="44" y="196" fill="#FAFAF9" font-family="-apple-system, sans-serif" font-size="12" font-weight="500">Ark Prasetya</text>
+    <text x="200" y="196" fill="#E7E5E4" font-family="-apple-system, sans-serif" font-size="11">12/27</text>
+
+    <!-- QR Display -->
+    <rect x="24" y="248" width="244" height="200" rx="14" fill="#FFFFFF" stroke="#E7E5E4"/>
+    <text x="44" y="278" fill="#1C1917" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Dynamic Payment QRIS</text>
+    <text x="44" y="294" fill="#78716C" font-family="-apple-system, sans-serif" font-size="10">Scan at cashier to pay or claim points</text>
+    
+    <!-- QR Code Mockup Graphic -->
+    <g transform="translate(86, 312)">
+      <rect width="100" height="100" fill="#FFFFFF" stroke="#1C1917" stroke-width="2"/>
+      <rect x="8" y="8" width="26" height="26" fill="#1C1917"/>
+      <rect x="66" y="8" width="26" height="26" fill="#1C1917"/>
+      <rect x="8" y="66" width="26" height="26" fill="#1C1917"/>
+      <rect x="42" y="42" width="16" height="16" fill="#1C1917"/>
+      <rect x="14" y="42" width="8" height="8" fill="#1C1917"/>
+      <rect x="42" y="14" width="8" height="8" fill="#1C1917"/>
+      <rect x="76" y="42" width="10" height="10" fill="#1C1917"/>
+      <rect x="42" y="74" width="12" height="12" fill="#1C1917"/>
+      <rect x="68" y="74" width="14" height="14" fill="#1C1917"/>
+    </g>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="cardGradA" x1="24" y1="92" x2="268" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="cardGradB" x1="24" y1="92" x2="268" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#292524"/>
+      <stop offset="1" stop-color="#78716C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Editorial Info Badge -->
+  <g transform="translate(80, 640)">
+    <rect width="320" height="50" rx="8" fill="#FFFFFF" stroke="#DDDBCF" stroke-width="1"/>
+    <text x="20" y="24" fill="#09090B" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Member App Ecosystem</text>
+    <text x="20" y="40" fill="#71717A" font-family="-apple-system, sans-serif" font-size="11">White-Label Architecture across 15+ Brands</text>
+  </g>
+</svg>

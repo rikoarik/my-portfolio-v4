@@ -1,0 +1,1262 @@
+{
+  "profile": {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "full_name": "Arik Riko Prasetya",
+    "title": "Software Engineer",
+    "descriptor": "Mobile · Backend · Full-stack",
+    "tagline_primary": "I build mobile apps, backend systems, and web products from idea to production.",
+    "tagline_secondary": "Working across product development, APIs, integrations, databases, mobile platforms, and production delivery.",
+    "location": "Indonesia",
+    "email": "arikrikoprasetya@gmail.com",
+    "github_url": "https://github.com/arikriko",
+    "linkedin_url": "https://linkedin.com/in/arikriko",
+    "website_url": "https://arikriko.com",
+    "resume_url": "/resume/Arik_Riko_Prasetya_Software_Engineer.pdf",
+    "avatar_media_id": null,
+    "status": "published"
+  },
+  "sections": [
+    {
+      "id": "10000000-0000-0000-0000-000000000001",
+      "section_key": "hero",
+      "eyebrow": "Software Engineer",
+      "title": "Arik Riko Prasetya",
+      "subtitle": "Mobile · Backend · Full-stack",
+      "body": "I build mobile apps, backend systems, and web products from idea to production.",
+      "metadata": {
+        "primary_cta_label": "View Selected Work",
+        "primary_cta_target": "#work",
+        "secondary_cta_label": "Download Resume",
+        "secondary_cta_target": "/resume/Arik_Riko_Prasetya_Software_Engineer.pdf"
+      },
+      "status": "published",
+      "sort_order": 1
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000002",
+      "section_key": "selected_work",
+      "eyebrow": "Portfolio",
+      "title": "Selected Work",
+      "subtitle": "A selection of production and personal projects across mobile, backend, web, payments, integrations, and AI-assisted products.",
+      "body": null,
+      "metadata": {},
+      "status": "published",
+      "sort_order": 2
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000003",
+      "section_key": "about",
+      "eyebrow": "Engineering Philosophy",
+      "title": "Building software from interface to backend and production.",
+      "subtitle": null,
+      "body": "I’m a software engineer whose professional work started primarily in mobile development and expanded into backend and full-stack product development. I’ve worked on production payment apps, operational systems, backend APIs, web applications, databases, device integrations, deployment, and release workflows.\n\nI prefer owning real product problems end-to-end: understanding the flow, building the feature, integrating services, handling edge cases, shipping it, and fixing what happens in production.",
+      "metadata": {},
+      "status": "published",
+      "sort_order": 3
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000004",
+      "section_key": "capabilities",
+      "eyebrow": "Stack & Technical Breadth",
+      "title": "Capabilities",
+      "subtitle": "Proven technical capabilities across mobile platforms, backend architectures, and production workflows.",
+      "body": null,
+      "metadata": {},
+      "status": "published",
+      "sort_order": 4
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000005",
+      "section_key": "github",
+      "eyebrow": "Open Source & Experiments",
+      "title": "Code outside work",
+      "subtitle": "Public experiments and product builds across mobile, backend, web, automation, and AI integrations.",
+      "body": null,
+      "metadata": {},
+      "status": "published",
+      "sort_order": 5
+    },
+    {
+      "id": "10000000-0000-0000-0000-000000000006",
+      "section_key": "contact",
+      "eyebrow": "Get In Touch",
+      "title": "Let’s build something useful.",
+      "subtitle": null,
+      "body": "Open to software engineering opportunities across mobile, backend, and full-stack development.",
+      "metadata": {},
+      "status": "published",
+      "sort_order": 6
+    }
+  ],
+  "experiences": [
+    {
+      "id": "20000000-0000-0000-0000-000000000001",
+      "company": "PT Teknologi Kartu Indonesia",
+      "role": "Mobile Developer",
+      "employment_type": "Full Time",
+      "location": "Indonesia",
+      "start_date": "2025-01-01",
+      "end_date": null,
+      "is_current": true,
+      "summary": "Build and maintain mobile applications for payment and financial services across multiple client brands.",
+      "bullets": [
+        "Build and maintain mobile applications for payment and financial services across multiple client brands.",
+        "Work on features including QRIS, NFC, Bluetooth, printer integration, POS/EDC, PPOB, marketplace, and virtual cards.",
+        "Connect mobile applications with backend APIs, payment services, and external devices used in transaction flows.",
+        "Handle feature development, production issues, application maintenance, and release preparation.",
+        "Manage application publishing and updates through Google Play Store and Apple App Store.",
+        "Contributed to 15+ production mobile applications."
+      ],
+      "sort_order": 1,
+      "status": "published",
+      "published_at": "2025-01-01T00:00:00Z"
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000002",
+      "company": "PUAS Hub",
+      "role": "Mobile Developer",
+      "employment_type": "Freelance / Part-time",
+      "location": "Indonesia",
+      "start_date": "2026-02-01",
+      "end_date": "2026-08-31",
+      "is_current": false,
+      "summary": "Built the PUAS Hub mobile application from the ground up through final delivery.",
+      "bullets": [
+        "Built the PUAS Hub mobile application from the ground up through final delivery.",
+        "Worked on the complete mobile flow, including UI, transaction processing, API integration, and printer integration.",
+        "Built digital product flows for pulsa, data packages, electricity, e-wallet, games, and other PPOB services.",
+        "Handled balance information, transaction history, transaction states, receipt printing, debugging, and application stabilization.",
+        "Prepared the application for production use and final project delivery."
+      ],
+      "sort_order": 2,
+      "status": "published",
+      "published_at": "2026-02-01T00:00:00Z"
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000003",
+      "company": "Diprojectin",
+      "role": "Full-stack Developer",
+      "employment_type": "Freelance / Part-time",
+      "location": "Indonesia",
+      "start_date": "2025-05-01",
+      "end_date": "2026-06-30",
+      "is_current": false,
+      "summary": "Built Laravel backend services and APIs for client projects and developed full-stack web applications.",
+      "bullets": [
+        "Built Laravel backend services and APIs for client projects.",
+        "Developed full-stack Laravel web applications covering backend logic and frontend implementation.",
+        "Deployed and maintained web applications through cPanel.",
+        "Worked on client-requested features, bug fixes, maintenance, and system updates.",
+        "Built an Android AR learning application with 3D educational content using Kotlin.",
+        "Worked on educational mobile applications using MIT App Inventor."
+      ],
+      "sort_order": 3,
+      "status": "published",
+      "published_at": "2025-05-01T00:00:00Z"
+    },
+    {
+      "id": "20000000-0000-0000-0000-000000000004",
+      "company": "PT Mahawangsa",
+      "role": "Android Developer",
+      "employment_type": "Freelance",
+      "location": "Indonesia",
+      "start_date": "2024-11-01",
+      "end_date": "2025-01-31",
+      "is_current": false,
+      "summary": "Built an Android employee attendance application with GPS verification and selfie validation.",
+      "bullets": [
+        "Built an Android employee attendance application.",
+        "Worked on check-in/check-out, GPS validation, selfie verification, attendance history, and notifications.",
+        "Integrated attendance flows with backend services.",
+        "Handled development, bug fixing, and delivery until production-ready."
+      ],
+      "sort_order": 4,
+      "status": "published",
+      "published_at": "2024-11-01T00:00:00Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "30000000-0000-0000-0000-000000000001",
+      "slug": "puas-hub",
+      "title": "PUAS Hub",
+      "subtitle": "PPOB & Digital Product Mobile Application",
+      "summary": "Built from the ground up through final delivery, covering complete digital payment flows, thermal printer integration, and real-time transaction state handling.",
+      "period_label": "Feb 2026 – Aug 2026",
+      "start_date": "2026-02-01",
+      "end_date": "2026-08-31",
+      "role": "Mobile Developer",
+      "project_type": "Client Product Delivery",
+      "platform": "Android & iOS (Flutter)",
+      "featured": true,
+      "cover_image_url": "/images/projects/puas-hub/cover.svg",
+      "cover_alt_text": "PUAS Hub transaction history and digital product purchase screens",
+      "sort_order": 1,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t1",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "technology": "Flutter",
+          "category": "mobile",
+          "sort_order": 1
+        },
+        {
+          "id": "t2",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "technology": "Dart",
+          "category": "mobile",
+          "sort_order": 2
+        },
+        {
+          "id": "t3",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "technology": "BLoC",
+          "category": "architecture",
+          "sort_order": 3
+        },
+        {
+          "id": "t4",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "technology": "Dio / REST API",
+          "category": "network",
+          "sort_order": 4
+        },
+        {
+          "id": "t5",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "technology": "ESC/POS Printer",
+          "category": "hardware",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s1",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "PUAS Hub is an operational agent and merchant application enabling daily digital transactions such as phone credit (pulsa), data packages, electricity tokens, e-wallet top-ups, and utility bill payments. Agents rely on the app on low to mid-tier mobile hardware, frequently connecting to external Bluetooth thermal printers to issue paper receipts directly to end customers.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s2",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "role",
+          "title": "My Role",
+          "body_md": "I owned the Flutter application from initial architecture through final delivery. This included building responsive UI layouts, designing robust state management using BLoC, integrating backend REST endpoints, handling hardware connectivity with thermal receipt printers, and diagnosing transaction status discrepancies.",
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "s3",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "built",
+          "title": "What I Built",
+          "body_md": "- Complete digital product catalog with instant category filtering and real-time operator prefix detection.\n- Transaction checkout pipeline with client-side balance validation, confirmation bottom sheets, and PIN authentication.\n- Bluetooth ESC/POS receipt generation engine supporting custom store headers, itemized breakdowns, and footer notes.\n- Resilient transaction history module with status badges (Success, Pending, Failed) and search by invoice ID.\n- Network error recovery and automatic token refresh interceptors preventing session drops during transactions.",
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "s4",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "decisions",
+          "title": "Engineering Decisions",
+          "body_md": "- **Predictable Transaction State**: Adopted BLoC to enforce explicit transitions between `Processing`, `PendingVerification`, `Success`, and `Failed`. This completely eliminated duplicate balance deductions caused by impatient repeated taps.\n- **Hardware Abstraction Layer**: Built a unified printer service that buffers character sequences and wraps ESC/POS command formatting, allowing different 58mm printer models to be used without vendor-specific code patches.\n- **Optimized List Rendering**: Implemented sliver-based virtualized lists for transaction logs and product grids to preserve 60fps scrolling on budget Android devices.",
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "s5",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "integrations",
+          "title": "Integrations",
+          "body_md": "- REST API with HMAC request signing and Bearer token lifecycle.\n- Bluetooth SPP (Serial Port Profile) thermal receipt printers.\n- Native Android permissions and background connection management.",
+          "sort_order": 5,
+          "status": "published"
+        },
+        {
+          "id": "s6",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "challenges",
+          "title": "Challenges & Solutions",
+          "body_md": "Digital product aggregators occasionally return indeterminate statuses while billing provider queues clear. Rather than treating slow responses as timeouts or failures, I designed an active polling and fallback state with a clear countdown and retry mechanism, preventing duplicate user orders and merchant panic.",
+          "sort_order": 6,
+          "status": "published"
+        },
+        {
+          "id": "s7",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "result",
+          "title": "Result",
+          "body_md": "- Delivered the complete application to production within the client engagement timeline.\n- Verified stable receipt printing and transaction completion across multiple Android device form factors.\n- Formed the reusable foundational mobile codebase for subsequent operational tool rollouts.",
+          "sort_order": 7,
+          "status": "published"
+        },
+        {
+          "id": "s8",
+          "project_id": "30000000-0000-0000-0000-000000000001",
+          "section_type": "stack",
+          "title": "Technology Stack",
+          "body_md": "Flutter, Dart, BLoC State Management, Dio, REST API, ESC/POS Bluetooth Printer Protocol.",
+          "sort_order": 8,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000002",
+      "slug": "member-app-ecosystem",
+      "title": "Member App Ecosystem",
+      "subtitle": "Multi-Brand White-Label Mobile Architecture",
+      "summary": "Scaled a modular mobile architecture supporting multiple financial and membership brands with QRIS payments, virtual cards, PPOB, and continuous store releases.",
+      "period_label": "Aug 2025 – Sep 2026",
+      "start_date": "2025-08-01",
+      "end_date": "2026-09-30",
+      "role": "Mobile Developer",
+      "project_type": "Production Client Ecosystem",
+      "platform": "Android & iOS (React Native / Expo)",
+      "featured": true,
+      "cover_image_url": "/images/projects/member-app-ecosystem/cover.svg",
+      "cover_alt_text": "Multi-tenant member app ecosystem showcasing virtual card and payment interfaces across brands",
+      "sort_order": 2,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t6",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "technology": "React Native",
+          "category": "mobile",
+          "sort_order": 1
+        },
+        {
+          "id": "t7",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "technology": "Expo",
+          "category": "mobile",
+          "sort_order": 2
+        },
+        {
+          "id": "t8",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "technology": "TypeScript",
+          "category": "language",
+          "sort_order": 3
+        },
+        {
+          "id": "t9",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "technology": "Zustand",
+          "category": "architecture",
+          "sort_order": 4
+        },
+        {
+          "id": "t10",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "technology": "QRIS / Virtual Card",
+          "category": "payment",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s9",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "Commercial enterprise clients required their own branded member and payment applications without maintaining disjointed codebases. The ecosystem required dynamic theming, virtual card generation, standard national QR payments (QRIS), merchant point-of-sale catalog browsing, and seamless submission across both Google Play Store and Apple App Store.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s10",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "section_type": "role",
+          "title": "My Role",
+          "body_md": "As a core mobile engineer on the team, I engineered configurable frontend components, integrated QRIS scanning and rendering pipelines, implemented virtual member card modules, and managed app deployment configurations for client brand releases.",
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "s11",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "section_type": "built",
+          "title": "What I Built",
+          "body_md": "- Dynamic tenant theme injector pulling brand color schemes, typography, and logo assets at runtime.\n- Integrated camera QR scanner with parsing for standard Indonesian QRIS transaction payload strings.\n- Virtual membership card visual component with barcode rendering, tap-to-copy card numbers, and security masking.\n- In-app PPOB and digital voucher purchase flows directly connected to tenant wallet balance.\n- Store build pipeline configurations using EAS for parallel client production distribution.",
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "s12",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "section_type": "decisions",
+          "title": "Engineering Decisions",
+          "body_md": "- **Single Codebase, Multiple Brand Profiles**: Structured build configuration presets separating bundle identifiers, assets, and API base targets rather than maintaining distinct branches.\n- **Lightweight State via Zustand**: Replaced heavy legacy boilerplate with Zustand slices for session auth, member tier caching, and shopping cart persistence.\n- **Defensive Error Boundaries**: Wrapped high-risk device capabilities (camera, NFC, hardware storage) in contextual fallback boundaries so unexpected hardware permission denials do not crash the application.",
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "s13",
+          "project_id": "30000000-0000-0000-0000-000000000002",
+          "section_type": "result",
+          "title": "Result",
+          "body_md": "- Successfully contributed to active production deployments across 15+ client applications on Google Play Store and Apple App Store.\n- Drastically reduced delivery time when bootstrapping and skinning newly onboarded commercial clients.",
+          "sort_order": 5,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000003",
+      "slug": "lembar",
+      "title": "Lembar",
+      "subtitle": "Modern Document & Workflow Platform",
+      "summary": "Full-stack product engineering showcasing strict schema migrations, high-throughput Fastify API design, Drizzle ORM typing, and a responsive Next.js web application.",
+      "period_label": "Jan 2026 – Jun 2026",
+      "start_date": "2026-01-01",
+      "end_date": "2026-06-30",
+      "role": "Full-stack Engineer",
+      "project_type": "Full-stack Web Platform",
+      "platform": "Web & API (Next.js & Fastify)",
+      "featured": true,
+      "cover_image_url": "/images/projects/lembar/cover.svg",
+      "cover_alt_text": "Lembar product dashboard view with workflow pipeline and document status trackers",
+      "repo_url": "https://github.com/arikriko/Frontend-Lembar",
+      "sort_order": 3,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t11",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "technology": "Next.js",
+          "category": "web",
+          "sort_order": 1
+        },
+        {
+          "id": "t12",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "technology": "Fastify",
+          "category": "backend",
+          "sort_order": 2
+        },
+        {
+          "id": "t13",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "technology": "PostgreSQL",
+          "category": "database",
+          "sort_order": 3
+        },
+        {
+          "id": "t14",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "technology": "Drizzle ORM",
+          "category": "backend",
+          "sort_order": 4
+        },
+        {
+          "id": "t15",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "technology": "TypeScript",
+          "category": "language",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s14",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "Lembar was designed as a modern operational system for managing collaborative document lifecycles, structured approval queues, and team revision workflows. It serves as a flagship demonstration of clean separation between a high-efficiency backend API and an editorial frontend interface.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s15",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "section_type": "role",
+          "title": "My Role",
+          "body_md": "I designed and developed both repositories from inception: Frontend-Lembar (Next.js, TypeScript, Tailwind) and Backend-Lembar (Fastify, PostgreSQL, Drizzle ORM). I authored the database schema, migration history, API contracts, and client integration services.",
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "s16",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "section_type": "decisions",
+          "title": "Engineering Decisions",
+          "body_md": "- **Fastify for Low Overhead**: Selected Fastify for its high-performance asynchronous request pipeline and native schema compilation.\n- **Type-safe Database Layer**: Used Drizzle ORM to maintain compile-time type safety from SQL schemas directly into API response contracts, eliminating runtime type drift.\n- **Contract-first API Specifications**: Generated comprehensive OpenAPI schemas, enabling frontend consumers to generate typed HTTP clients automatically.",
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "s17",
+          "project_id": "30000000-0000-0000-0000-000000000003",
+          "section_type": "result",
+          "title": "Result",
+          "body_md": "- Proven end-to-end full-stack architecture running with strict TypeScript verification across frontend and backend.\n- Clean database migrations and seed tooling allowing effortless local setup and automated integration test runs.",
+          "sort_order": 4,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000004",
+      "slug": "crm-platform",
+      "title": "CRM Platform",
+      "subtitle": "Enterprise Sales & Lead Management System",
+      "summary": "Engineered an end-to-end business operations portal combining NestJS backend services, Supabase PostgreSQL, JWT role access control, and a Next.js administrative dashboard.",
+      "period_label": "Sep 2025 – Feb 2026",
+      "start_date": "2025-09-01",
+      "end_date": "2026-02-28",
+      "role": "Full-stack Engineer",
+      "project_type": "Enterprise Business System",
+      "platform": "Web Application (Next.js & NestJS)",
+      "featured": true,
+      "cover_image_url": "/images/projects/crm-platform/cover.svg",
+      "cover_alt_text": "CRM Platform sales pipeline dashboard and lead tracking interface",
+      "repo_url": "https://github.com/arikriko/crm-frontend",
+      "sort_order": 4,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t16",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "technology": "Next.js",
+          "category": "web",
+          "sort_order": 1
+        },
+        {
+          "id": "t17",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "technology": "NestJS",
+          "category": "backend",
+          "sort_order": 2
+        },
+        {
+          "id": "t18",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "technology": "Supabase",
+          "category": "database",
+          "sort_order": 3
+        },
+        {
+          "id": "t19",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "technology": "JWT / RBAC",
+          "category": "security",
+          "sort_order": 4
+        },
+        {
+          "id": "t20",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "technology": "Swagger",
+          "category": "api",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s18",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "A centralized sales and customer operations application built to track leads through customizable pipeline stages, manage client communications, maintain activity audit histories, and enforce strict role-based access control across sales agents and managers.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s19",
+          "project_id": "30000000-0000-0000-0000-000000000004",
+          "section_type": "decisions",
+          "title": "Engineering Decisions",
+          "body_md": "- **NestJS Modular Architecture**: Enforced modular domain separation (Auth, Leads, Pipeline, Contacts, Audits) allowing independent testing of services and controllers.\n- **JWT & Role Guards**: Implemented hierarchical route guards ensuring sales representatives only mutate their assigned pipeline records while administrators maintain organizational oversight.\n- **Supabase PostgreSQL & Security**: Utilized managed PostgreSQL with Row Level Security policies complementing application-level middleware.",
+          "sort_order": 2,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000005",
+      "slug": "merchant-payment-platform",
+      "title": "Merchant Payment Platform",
+      "subtitle": "Point-of-Sale Hardware & Transaction Gateway",
+      "summary": "Engineered transaction flows connecting mobile POS applications with QRIS issuance, NFC contactless card readers, Bluetooth peripherals, and secure payment processing services.",
+      "period_label": "Mar 2025 – Jul 2025",
+      "start_date": "2025-03-01",
+      "end_date": "2025-07-31",
+      "role": "Mobile & Integration Engineer",
+      "project_type": "Commercial Payment Platform",
+      "platform": "Android POS / EDC Peripherals",
+      "featured": true,
+      "cover_image_url": "/images/projects/merchant-payment-platform/cover.svg",
+      "cover_alt_text": "Merchant payment device integration diagram with QRIS and NFC contactless payment flow",
+      "sort_order": 5,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t21",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "technology": "Kotlin / Java",
+          "category": "mobile",
+          "sort_order": 1
+        },
+        {
+          "id": "t22",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "technology": "QRIS",
+          "category": "payment",
+          "sort_order": 2
+        },
+        {
+          "id": "t23",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "technology": "NFC Reader",
+          "category": "hardware",
+          "sort_order": 3
+        },
+        {
+          "id": "t24",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "technology": "POS / EDC Hardware",
+          "category": "hardware",
+          "sort_order": 4
+        },
+        {
+          "id": "t25",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "technology": "Payment Gateway APIs",
+          "category": "integration",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s20",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "Production point-of-sale terminal software handling physical counter checkouts in high-volume retail environments. The software communicates with proprietary EDC devices, NFC card readers, and standard thermal printers to accept contactless payments, digital wallets, and dynamic QR transactions without exposing customer data.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s21",
+          "project_id": "30000000-0000-0000-0000-000000000005",
+          "section_type": "role",
+          "title": "My Role",
+          "body_md": "Integrated hardware communication libraries, implemented secure payment transaction state machines, ensured compliant handling of card and transaction identifiers, and resolved production field issues related to unstable Bluetooth printer reconnects.",
+          "sort_order": 2,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "30000000-0000-0000-0000-000000000006",
+      "slug": "explore-bojonegoro",
+      "title": "Explore Bojonegoro",
+      "subtitle": "Native Android Regional Tourism Guide",
+      "summary": "Native Android application showcasing early foundation in Kotlin, Coroutines, Retrofit networking, interactive map routing, and local cache synchronization.",
+      "period_label": "Jun 2024 – Oct 2024",
+      "start_date": "2024-06-01",
+      "end_date": "2024-10-31",
+      "role": "Android Developer",
+      "project_type": "Public Information App",
+      "platform": "Android Native (Kotlin)",
+      "featured": true,
+      "cover_image_url": "/images/projects/explore-bojonegoro/cover.svg",
+      "cover_alt_text": "Explore Bojonegoro mobile app screens showcasing destination guides and interactive map navigation",
+      "repo_url": "https://github.com/arikriko/ExploreBojonegoro",
+      "sort_order": 6,
+      "status": "published",
+      "technologies": [
+        {
+          "id": "t26",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "technology": "Kotlin",
+          "category": "mobile",
+          "sort_order": 1
+        },
+        {
+          "id": "t27",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "technology": "Android SDK",
+          "category": "mobile",
+          "sort_order": 2
+        },
+        {
+          "id": "t28",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "technology": "Firebase",
+          "category": "backend",
+          "sort_order": 3
+        },
+        {
+          "id": "t29",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "technology": "Retrofit & Coroutines",
+          "category": "network",
+          "sort_order": 4
+        },
+        {
+          "id": "t30",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "technology": "Google Maps / Mapbox",
+          "category": "maps",
+          "sort_order": 5
+        }
+      ],
+      "sections": [
+        {
+          "id": "s22",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "section_type": "context",
+          "title": "Context",
+          "body_md": "A mobile exploration application built to help tourists discover regional destinations, historical landmarks, culinary spots, and cultural events across Bojonegoro, featuring GPS navigation, weather forecasts, and offline bookmarks.",
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "s23",
+          "project_id": "30000000-0000-0000-0000-000000000006",
+          "section_type": "decisions",
+          "title": "Engineering Decisions",
+          "body_md": "- **MVVM with Clean Separation**: Decoupled View layer from Business Logic using Android ViewModel, StateFlow, and Coroutine dispatchers for asynchronous background fetching.\n- **Offline Caching**: Stored destination metadata locally in SQLite/Room to ensure travelers with intermittent mobile coverage could still access directions and landmark descriptions.",
+          "sort_order": 2,
+          "status": "published"
+        }
+      ]
+    }
+  ],
+  "skillGroups": [
+    {
+      "id": "40000000-0000-0000-0000-000000000001",
+      "name": "Mobile",
+      "description": "Native and cross-platform mobile production stacks",
+      "sort_order": 1,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk1",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "Kotlin",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk2",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "Java",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk3",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "Flutter & Dart",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk4",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "React Native & Expo",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "sk5",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "Android Native SDK",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 5,
+          "status": "published"
+        },
+        {
+          "id": "sk6",
+          "group_id": "40000000-0000-0000-0000-000000000001",
+          "name": "BLoC / Riverpod / Zustand",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 6,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000002",
+      "name": "Backend",
+      "description": "Server APIs, service architectures, and databases",
+      "sort_order": 2,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk7",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "Laravel & PHP",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk8",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "Node.js & TypeScript",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk9",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "Fastify",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk10",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "NestJS",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "sk11",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "Hono",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 5,
+          "status": "published"
+        },
+        {
+          "id": "sk12",
+          "group_id": "40000000-0000-0000-0000-000000000002",
+          "name": "REST API & OpenAPI",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 6,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000003",
+      "name": "Web",
+      "description": "Modern frontend web engineering",
+      "sort_order": 3,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk13",
+          "group_id": "40000000-0000-0000-0000-000000000003",
+          "name": "Next.js (App Router)",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk14",
+          "group_id": "40000000-0000-0000-0000-000000000003",
+          "name": "React",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk15",
+          "group_id": "40000000-0000-0000-0000-000000000003",
+          "name": "Tailwind CSS",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk16",
+          "group_id": "40000000-0000-0000-0000-000000000003",
+          "name": "HTML5 Semantic & a11y",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000004",
+      "name": "Data",
+      "description": "Relational, embedded, and managed databases",
+      "sort_order": 4,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk17",
+          "group_id": "40000000-0000-0000-0000-000000000004",
+          "name": "PostgreSQL",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk18",
+          "group_id": "40000000-0000-0000-0000-000000000004",
+          "name": "Supabase",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk19",
+          "group_id": "40000000-0000-0000-0000-000000000004",
+          "name": "MySQL & SQLite",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk20",
+          "group_id": "40000000-0000-0000-0000-000000000004",
+          "name": "Firebase Firestore",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "sk21",
+          "group_id": "40000000-0000-0000-0000-000000000004",
+          "name": "Prisma & Drizzle ORM",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 5,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000005",
+      "name": "Integrations",
+      "description": "Hardware, device, and payment protocol integrations",
+      "sort_order": 5,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk22",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "QRIS Standard Payment",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk23",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "NFC Contactless",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk24",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "Bluetooth & ESC/POS Printers",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk25",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "POS & EDC Device Hardware",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "sk26",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "GPS & Google Maps / Mapbox",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 5,
+          "status": "published"
+        },
+        {
+          "id": "sk27",
+          "group_id": "40000000-0000-0000-0000-000000000005",
+          "name": "OpenAI / Google AI API",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 6,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000006",
+      "name": "Delivery",
+      "description": "DevOps, continuous delivery, and app store publishing",
+      "sort_order": 6,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk28",
+          "group_id": "40000000-0000-0000-0000-000000000006",
+          "name": "Git & GitHub / GitLab CI/CD",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk29",
+          "group_id": "40000000-0000-0000-0000-000000000006",
+          "name": "Google Play Store Releases",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk30",
+          "group_id": "40000000-0000-0000-0000-000000000006",
+          "name": "Apple App Store Releases",
+          "level": "primary",
+          "featured": true,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk31",
+          "group_id": "40000000-0000-0000-0000-000000000006",
+          "name": "EAS Build & Update",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        },
+        {
+          "id": "sk32",
+          "group_id": "40000000-0000-0000-0000-000000000006",
+          "name": "cPanel & Server Deployment",
+          "level": "primary",
+          "featured": false,
+          "sort_order": 5,
+          "status": "published"
+        }
+      ]
+    },
+    {
+      "id": "40000000-0000-0000-0000-000000000007",
+      "name": "Additional Exposure",
+      "description": "Secondary technical exposure and foundational tools",
+      "sort_order": 7,
+      "status": "published",
+      "skills": [
+        {
+          "id": "sk33",
+          "group_id": "40000000-0000-0000-0000-000000000007",
+          "name": "Python OOP",
+          "level": "secondary",
+          "featured": false,
+          "sort_order": 1,
+          "status": "published"
+        },
+        {
+          "id": "sk34",
+          "group_id": "40000000-0000-0000-0000-000000000007",
+          "name": "Kivy",
+          "level": "secondary",
+          "featured": false,
+          "sort_order": 2,
+          "status": "published"
+        },
+        {
+          "id": "sk35",
+          "group_id": "40000000-0000-0000-0000-000000000007",
+          "name": "Pygame",
+          "level": "secondary",
+          "featured": false,
+          "sort_order": 3,
+          "status": "published"
+        },
+        {
+          "id": "sk36",
+          "group_id": "40000000-0000-0000-0000-000000000007",
+          "name": "Odoo (Basic)",
+          "level": "basic",
+          "featured": false,
+          "sort_order": 4,
+          "status": "published"
+        }
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "id": "50000000-0000-0000-0000-000000000001",
+      "repo_full_name": "arikriko/Frontend-Lembar",
+      "title_override": "Frontend-Lembar",
+      "description_override": "Next.js, TypeScript, and Tailwind CSS document management client application.",
+      "sort_order": 1,
+      "visible": true,
+      "status": "published",
+      "language": "TypeScript",
+      "url": "https://github.com/arikriko/Frontend-Lembar"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000002",
+      "repo_full_name": "arikriko/Backend-Lembar",
+      "title_override": "Backend-Lembar",
+      "description_override": "Fastify, PostgreSQL, Drizzle ORM, and OpenAPI document workflow backend service.",
+      "sort_order": 2,
+      "visible": true,
+      "status": "published",
+      "language": "TypeScript",
+      "url": "https://github.com/arikriko/Backend-Lembar"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000003",
+      "repo_full_name": "arikriko/nara-app",
+      "title_override": "nara-app",
+      "description_override": "Flutter mobile application for task productivity and habit synchronization.",
+      "sort_order": 3,
+      "visible": true,
+      "status": "published",
+      "language": "Dart",
+      "url": "https://github.com/arikriko/nara-app"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000004",
+      "repo_full_name": "arikriko/nara-api",
+      "title_override": "nara-api",
+      "description_override": "Node.js REST service providing authentication, synchronization, and storage.",
+      "sort_order": 4,
+      "visible": true,
+      "status": "published",
+      "language": "JavaScript",
+      "url": "https://github.com/arikriko/nara-api"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000005",
+      "repo_full_name": "arikriko/crm-frontend",
+      "title_override": "crm-frontend",
+      "description_override": "Next.js commercial lead management portal with interactive pipeline analytics.",
+      "sort_order": 5,
+      "visible": true,
+      "status": "published",
+      "language": "TypeScript",
+      "url": "https://github.com/arikriko/crm-frontend"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000006",
+      "repo_full_name": "arikriko/crm-backend",
+      "title_override": "crm-backend",
+      "description_override": "NestJS, Supabase PostgreSQL, and JWT role-based access control backend API.",
+      "sort_order": 6,
+      "visible": true,
+      "status": "published",
+      "language": "TypeScript",
+      "url": "https://github.com/arikriko/crm-backend"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000007",
+      "repo_full_name": "arikriko/Puas-app",
+      "title_override": "Puas-app",
+      "description_override": "Flutter agent and merchant application for PPOB services and receipt printing.",
+      "sort_order": 7,
+      "visible": true,
+      "status": "published",
+      "language": "Dart",
+      "url": "https://github.com/arikriko/Puas-app"
+    },
+    {
+      "id": "50000000-0000-0000-0000-000000000008",
+      "repo_full_name": "arikriko/ExploreBojonegoro",
+      "title_override": "ExploreBojonegoro",
+      "description_override": "Native Android tourism guide application with interactive maps and offline caching.",
+      "sort_order": 8,
+      "visible": true,
+      "status": "published",
+      "language": "Kotlin",
+      "url": "https://github.com/arikriko/ExploreBojonegoro"
+    }
+  ],
+  "seo": {
+    "id": "60000000-0000-0000-0000-000000000001",
+    "site_title": "Arik Riko Prasetya · Software Engineer",
+    "title_template": "%s | Arik Riko Prasetya",
+    "default_description": "Software Engineer building mobile, backend, and web products using Kotlin, Java, Flutter, React Native, Laravel, Node.js, Next.js, and modern production tooling.",
+    "default_og_media_id": null,
+    "canonical_base_url": "https://arikriko.com",
+    "robots": "index, follow",
+    "metadata": {
+      "keywords": [
+        "Software Engineer Indonesia",
+        "Mobile Developer",
+        "Backend Developer",
+        "Full-stack Developer",
+        "Kotlin",
+        "Java",
+        "Flutter",
+        "React Native",
+        "Laravel",
+        "Node.js",
+        "Next.js"
+      ]
+    },
+    "status": "published"
+  },
+  "seoPages": [
+    {
+      "id": "70000000-0000-0000-0000-000000000001",
+      "page_key": "home",
+      "title": "Arik Riko Prasetya · Software Engineer (Mobile · Backend · Full-stack)",
+      "description": "Software Engineer building mobile apps, backend systems, and web products from idea to production.",
+      "canonical_url": "https://arikriko.com",
+      "status": "published"
+    },
+    {
+      "id": "70000000-0000-0000-0000-000000000002",
+      "page_key": "work",
+      "title": "Selected Work | Arik Riko Prasetya",
+      "description": "Case studies across mobile engineering, backend architectures, payment systems, and full-stack web platforms.",
+      "canonical_url": "https://arikriko.com/work",
+      "status": "published"
+    },
+    {
+      "id": "70000000-0000-0000-0000-000000000003",
+      "page_key": "about",
+      "title": "About & Experience | Arik Riko Prasetya",
+      "description": "Software engineer background, professional timeline, full capabilities, and engineering philosophy.",
+      "canonical_url": "https://arikriko.com/about",
+      "status": "published"
+    }
+  ]
+}
