@@ -9,52 +9,73 @@ export function CurtainLoader() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const mainPathRef = useRef<SVGPathElement>(null);
+  const clothPathRef = useRef<SVGPathElement>(null);
   const shadowPathRef = useRef<SVGPathElement>(null);
-  const trimPathRef = useRef<SVGPathElement>(null);
-  const pleatsContainerRef = useRef<HTMLDivElement>(null);
+  const hemLineRef = useRef<SVGPathElement>(null);
+  const foldsGroupRef = useRef<SVGGElement>(null);
 
   useEffect(() => {
-    // Check if user prefers reduced motion
+    // Respect reduced motion preference
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setIsComplete(true);
       return;
     }
 
-    // Lock page scroll during intro animation
+    // Lock page scroll during loader
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
-    // Animation state variables for GSAP interpolation
-    const curtainState = {
+    // Physics state for dynamic cloth pull
+    const clothState = {
       y: 1000,
-      sag: 0,
+      arch: 0,
       shadowY: 1000,
-      shadowSag: 0,
+      shadowArch: 0,
+      foldsOpacity: 0,
       counter: 0,
     };
 
-    // Helper to generate 5-segment draped scallop path
-    const buildDrapePath = (y: number, sag: number) => {
+    // Helper: Dynamic cloth contour curve
+    // Flat initially (arch=0), arches up in center when pulled
+    const buildClothPath = (y: number, arch: number) => {
+      const centerY = y - arch;
+      const sagY = y + arch * 0.12;
       return `M 0 0 
         L 1000 0 
         L 1000 ${y} 
-        Q 900 ${y + sag} 800 ${y} 
-        Q 700 ${y + sag} 600 ${y} 
-        Q 500 ${y + sag} 400 ${y} 
-        Q 300 ${y + sag} 200 ${y} 
-        Q 100 ${y + sag} 0 ${y} 
+        C 780 ${sagY} 640 ${centerY} 500 ${centerY} 
+        C 360 ${centerY} 220 ${sagY} 0 ${y} 
         Z`;
     };
 
-    // Helper to generate only the bottom hem stroke line
-    const buildHemTrimPath = (y: number, sag: number) => {
+    // Helper: Bottom hemline path
+    const buildHemPath = (y: number, arch: number) => {
+      const centerY = y - arch;
+      const sagY = y + arch * 0.12;
       return `M 1000 ${y} 
-        Q 900 ${y + sag} 800 ${y} 
-        Q 700 ${y + sag} 600 ${y} 
-        Q 500 ${y + sag} 400 ${y} 
-        Q 300 ${y + sag} 200 ${y} 
-        Q 100 ${y + sag} 0 ${y}`;
+        C 780 ${sagY} 640 ${centerY} 500 ${centerY} 
+        C 360 ${centerY} 220 ${sagY} 0 ${y}`;
+    };
+
+    // Helper: Dynamic tension wrinkles forming along the pull
+    const updateFolds = (y: number, arch: number, opacity: number) => {
+      if (!foldsGroupRef.current) return;
+      foldsGroupRef.current.style.opacity = `${opacity}`;
+
+      const centerY = y - arch;
+      const paths = foldsGroupRef.current.querySelectorAll('path');
+      if (paths.length >= 5) {
+        // Fold 1: Center tension ridge
+        paths[0].setAttribute('d', `M 500 ${centerY} Q 500 ${(centerY) * 0.45} 500 0`);
+        // Fold 2: Left-center fold
+        paths[1].setAttribute('d', `M 500 ${centerY} Q 420 ${(centerY) * 0.55} 340 0`);
+        // Fold 3: Right-center fold
+        paths[2].setAttribute('d', `M 500 ${centerY} Q 580 ${(centerY) * 0.55} 660 0`);
+        // Fold 4: Outer-left tension line
+        paths[3].setAttribute('d', `M 500 ${centerY} Q 320 ${(centerY) * 0.65} 160 0`);
+        // Fold 5: Outer-right tension line
+        paths[4].setAttribute('d', `M 500 ${centerY} Q 680 ${(centerY) * 0.65} 840 0`);
+      }
     };
 
     const tl = gsap.timeline({
@@ -64,114 +85,111 @@ export function CurtainLoader() {
       },
     });
 
-    // 1. Smooth counter 0 -> 100%
-    tl.to(curtainState, {
+    // 1. Digital progress counter (0 -> 100% on flat, smooth cloth)
+    tl.to(clothState, {
       counter: 100,
-      duration: 0.95,
+      duration: 0.9,
       ease: 'power2.out',
       onUpdate: () => {
-        setProgress(Math.round(curtainState.counter));
+        setProgress(Math.round(clothState.counter));
       },
     });
 
-    // 2. Gentle fade & lift for center typography
+    // 2. Center typography floats up & fades out before cloth pull
     tl.to(
       contentRef.current,
       {
         opacity: 0,
-        y: -30,
-        duration: 0.35,
+        y: -24,
+        duration: 0.28,
         ease: 'power2.in',
       },
-      '+=0.08'
+      '+=0.06'
     );
 
-    // 3. Pleats wave & compression as tension builds
-    if (pleatsContainerRef.current) {
-      const pleats = pleatsContainerRef.current.children;
-      tl.to(
-        pleats,
-        {
-          scaleY: 0.96,
-          opacity: 0.85,
-          duration: 0.3,
-          stagger: {
-            each: 0.02,
-            from: 'center',
-          },
-          ease: 'power1.out',
-        },
-        '-=0.3'
-      );
-    }
-
-    // 4. MAIN CURTAIN PULL-UP: Lift from bottom to top with fabric drape scallops
+    // 3. THE CLOTH PULL: Hoist cloth upward from bottom to top
+    // The center is pulled up with tension arch, creating organic folds
     tl.to(
-      curtainState,
+      clothState,
       {
-        y: -120,
-        duration: 1.15,
-        ease: 'power4.inOut',
+        y: -140,
+        duration: 1.05,
+        ease: 'power3.inOut',
         onUpdate: () => {
-          if (mainPathRef.current) {
-            mainPathRef.current.setAttribute(
+          if (clothPathRef.current) {
+            clothPathRef.current.setAttribute(
               'd',
-              buildDrapePath(curtainState.y, curtainState.sag)
+              buildClothPath(clothState.y, clothState.arch)
             );
           }
-          if (trimPathRef.current) {
-            trimPathRef.current.setAttribute(
+          if (hemLineRef.current) {
+            hemLineRef.current.setAttribute(
               'd',
-              buildHemTrimPath(curtainState.y, curtainState.sag)
+              buildHemPath(clothState.y, clothState.arch)
             );
           }
-          if (pleatsContainerRef.current) {
-            // Synchronize pleats height with the rising curtain
-            const progressRatio = Math.max(0, curtainState.y / 1000);
-            pleatsContainerRef.current.style.transform = `scaleY(${progressRatio})`;
-          }
+          updateFolds(clothState.y, clothState.arch, clothState.foldsOpacity);
         },
       },
-      '-=0.15'
+      '-=0.08'
     );
 
-    // Dynamic Sag physics: fabric arches down during lift, then flattens at top
+    // Dynamic tension arch: grows as the cloth is pulled upward, flattens as it clears
     tl.to(
-      curtainState,
+      clothState,
       {
-        sag: 85,
+        arch: 220,
         duration: 0.45,
         ease: 'power2.out',
       },
-      '-=1.15'
+      '-=1.05'
     ).to(
-      curtainState,
+      clothState,
       {
-        sag: 0,
-        duration: 0.7,
-        ease: 'power3.in',
+        arch: 0,
+        duration: 0.6,
+        ease: 'power2.in',
       },
-      '-=0.7'
+      '-=0.6'
     );
 
-    // 5. Lagging Shadow Layer (under-curtain drape for physical depth)
+    // Wrinkles/folds appear during pull tension, then fade away as cloth bunches at top
     tl.to(
-      curtainState,
+      clothState,
       {
-        shadowY: -120,
-        shadowSag: 105,
-        duration: 1.25,
-        ease: 'power4.inOut',
+        foldsOpacity: 0.7,
+        duration: 0.35,
+        ease: 'power2.out',
+      },
+      '-=1.05'
+    ).to(
+      clothState,
+      {
+        foldsOpacity: 0,
+        duration: 0.5,
+        ease: 'power2.in',
+      },
+      '-=0.55'
+    );
+
+    // 4. Lagging Shadow Layer (under-layer following cloth pull for physical depth)
+    tl.to(
+      clothState,
+      {
+        shadowY: -140,
+        shadowArch: 250,
+        duration: 1.15,
+        ease: 'power3.inOut',
         onUpdate: () => {
           if (shadowPathRef.current) {
             shadowPathRef.current.setAttribute(
               'd',
-              buildDrapePath(curtainState.shadowY, curtainState.shadowSag)
+              buildClothPath(clothState.shadowY, clothState.shadowArch)
             );
           }
         },
       },
-      '-=1.12'
+      '-=1.02'
     );
 
     return () => {
@@ -184,16 +202,13 @@ export function CurtainLoader() {
     return null;
   }
 
-  // 10 vertical pleat ribs across the curtain for 3D fabric folds
-  const pleatIndices = Array.from({ length: 10 }, (_, i) => i);
-
   return (
     <aside
       ref={containerRef}
-      aria-label="Loading site presentation"
+      aria-label="Loading portfolio presentation"
       className="fixed inset-0 z-[9999] pointer-events-auto overflow-hidden select-none"
     >
-      {/* Dynamic SVG Curtain Layers with Scalloped Drapery Folds */}
+      {/* SVG Canvas for Flat Cloth Canvas & Dynamic Pull Simulation */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
         viewBox="0 0 1000 1000"
@@ -201,90 +216,89 @@ export function CurtainLoader() {
         aria-hidden="true"
       >
         <defs>
-          {/* Main Curtain Gradient with woven textile depth */}
-          <linearGradient id="curtainFabricGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#0e1215" />
-            <stop offset="50%" stopColor="#121619" />
-            <stop offset="90%" stopColor="#161c21" />
-            <stop offset="100%" stopColor="#1a2228" />
+          {/* Flat Satin Cloth Gradient (Smooth, unpleated sheet) */}
+          <linearGradient id="flatClothFill" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#080a0d" />
+            <stop offset="50%" stopColor="#0c0f13" />
+            <stop offset="100%" stopColor="#10141a" />
           </linearGradient>
 
-          {/* Under-layer Shadow Gradient */}
-          <linearGradient id="curtainShadowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#050708" stopOpacity="0.95" />
-            <stop offset="85%" stopColor="#080b0d" stopOpacity="0.85" />
+          {/* Under-cloth Shadow Gradient */}
+          <linearGradient id="clothShadowFill" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#000000" stopOpacity="0.9" />
+            <stop offset="80%" stopColor="#040507" stopOpacity="0.8" />
             <stop offset="100%" stopColor="#000000" stopOpacity="0.95" />
           </linearGradient>
 
-          {/* Coral & Gold Hem Accent Gradient */}
-          <linearGradient id="hemTrimGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FF7F50" />
-            <stop offset="35%" stopColor="#C49A45" />
-            <stop offset="70%" stopColor="#FF7F50" />
-            <stop offset="100%" stopColor="#C49A45" />
+          {/* Crease Shadow Gradient */}
+          <linearGradient id="creaseShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#000000" stopOpacity="0.1" />
+            <stop offset="70%" stopColor="#000000" stopOpacity="0.65" />
+            <stop offset="100%" stopColor="#000000" stopOpacity="0.9" />
           </linearGradient>
 
-          {/* Heavy Drapery Drop Shadow */}
-          <filter id="curtainDropShadow" x="-10%" y="-10%" width="120%" height="140%">
+          {/* Crease Highlight Gradient */}
+          <linearGradient id="creaseHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.02" />
+            <stop offset="60%" stopColor="#ffffff" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#ffffff" stopOpacity="0.22" />
+          </linearGradient>
+
+          {/* Heavy Real-world Cloth Drop Shadow */}
+          <filter id="clothDropShadow" x="-10%" y="-10%" width="120%" height="150%">
             <feDropShadow
               dx="0"
-              dy="30"
-              stdDeviation="25"
+              dy="35"
+              stdDeviation="30"
               floodColor="#000000"
-              floodOpacity="0.8"
+              floodOpacity="0.85"
             />
           </filter>
         </defs>
 
-        {/* 1. Lagging Under-curtain Shadow Layer */}
+        {/* 1. Lagging Under-cloth Shadow Layer */}
         <path
           ref={shadowPathRef}
-          d="M 0 0 L 1000 0 L 1000 1000 Q 900 1000 800 1000 Q 700 1000 600 1000 Q 500 1000 400 1000 Q 300 1000 200 1000 Q 100 1000 0 1000 Z"
-          fill="url(#curtainShadowGradient)"
-          opacity="0.8"
+          d="M 0 0 L 1000 0 L 1000 1000 L 0 1000 Z"
+          fill="url(#clothShadowFill)"
+          opacity="0.85"
         />
 
-        {/* 2. Primary Pleated Curtain Body with Deep Drop Shadow */}
+        {/* 2. Main Smooth Cloth Body (Starts 100% Flat & Solid) */}
         <path
-          ref={mainPathRef}
-          d="M 0 0 L 1000 0 L 1000 1000 Q 900 1000 800 1000 Q 700 1000 600 1000 Q 500 1000 400 1000 Q 300 1000 200 1000 Q 100 1000 0 1000 Z"
-          fill="url(#curtainFabricGradient)"
-          filter="url(#curtainDropShadow)"
+          ref={clothPathRef}
+          d="M 0 0 L 1000 0 L 1000 1000 L 0 1000 Z"
+          fill="url(#flatClothFill)"
+          filter="url(#clothDropShadow)"
         />
 
-        {/* 3. Stitched Accent Trim along Scalloped Bottom Folds */}
+        {/* 3. Dynamic Tension Wrinkles (Only appear when pulled upward) */}
+        <g ref={foldsGroupRef} style={{ opacity: 0 }}>
+          {/* Crease shadow lines */}
+          <path d="M 500 1000 Q 500 450 500 0" stroke="url(#creaseShadow)" strokeWidth="18" fill="none" />
+          <path d="M 500 1000 Q 420 550 340 0" stroke="url(#creaseShadow)" strokeWidth="14" fill="none" />
+          <path d="M 500 1000 Q 580 550 660 0" stroke="url(#creaseShadow)" strokeWidth="14" fill="none" />
+          <path d="M 500 1000 Q 320 650 160 0" stroke="url(#creaseShadow)" strokeWidth="10" fill="none" />
+          <path d="M 500 1000 Q 680 650 840 0" stroke="url(#creaseShadow)" strokeWidth="10" fill="none" />
+
+          {/* Adjacent highlight ridges for 3D fabric folds */}
+          <path d="M 496 1000 Q 496 450 496 0" stroke="url(#creaseHighlight)" strokeWidth="4" fill="none" />
+          <path d="M 494 1000 Q 416 550 336 0" stroke="url(#creaseHighlight)" strokeWidth="3" fill="none" />
+          <path d="M 504 1000 Q 584 550 664 0" stroke="url(#creaseHighlight)" strokeWidth="3" fill="none" />
+        </g>
+
+        {/* 4. Fine Hemline Stitch Highlight */}
         <path
-          ref={trimPathRef}
-          d="M 1000 1000 Q 900 1000 800 1000 Q 700 1000 600 1000 Q 500 1000 400 1000 Q 300 1000 200 1000 Q 100 1000 0 1000"
+          ref={hemLineRef}
+          d="M 1000 1000 L 0 1000"
           fill="none"
-          stroke="url(#hemTrimGradient)"
-          strokeWidth="3.5"
+          stroke="rgba(255, 255, 255, 0.16)"
+          strokeWidth="2"
           strokeLinecap="round"
-          opacity="0.9"
         />
       </svg>
 
-      {/* 3D Vertical Pleat Ribs (Simulating cloth folds & drape lighting) */}
-      <div
-        ref={pleatsContainerRef}
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none grid grid-cols-10 origin-top h-full w-full"
-      >
-        {pleatIndices.map((idx) => (
-          <div
-            key={idx}
-            className="h-full w-full border-r border-white/[0.02]"
-            style={{
-              background:
-                idx % 2 === 0
-                  ? 'linear-gradient(90deg, rgba(255,255,255,0.025) 0%, rgba(0,0,0,0.25) 100%)'
-                  : 'linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.015) 100%)',
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Centerpiece Content & Progress Counter */}
+      {/* Clean Flat Content: Counter & Minimalist Editorial Branding */}
       <div
         ref={contentRef}
         className="relative z-10 w-full h-full flex flex-col justify-between p-8 sm:p-14 text-[#f8fafc]"
@@ -292,7 +306,7 @@ export function CurtainLoader() {
         {/* Top Header Tag */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center gap-2.5">
-            <span className="w-2 h-2 rounded-full bg-[var(--page-background)] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-white/70 animate-pulse" />
             <span className="text-xs sm:text-sm font-mono tracking-widest uppercase text-white/90">
               Arik Riko Prasetya
             </span>
@@ -302,27 +316,27 @@ export function CurtainLoader() {
           </span>
         </div>
 
-        {/* Center Title & Counter */}
+        {/* Center: Title & Dynamic Digital Counter */}
         <div className="flex flex-col items-center justify-center text-center my-auto space-y-6">
           <div className="space-y-2">
-            <span className="text-xs font-mono tracking-widest uppercase text-[var(--page-background)]">
-              Software Engineer · Crafting Experiences
+            <span className="text-xs font-mono tracking-widest uppercase text-white/60">
+              Software Engineer · Portfolio
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-light tracking-tight text-white/95">
-              Pulling The Curtain
+              Crafting Experiences
             </h1>
           </div>
 
           {/* Smooth Digital Counter */}
           <div className="flex items-baseline gap-1 font-mono text-5xl sm:text-7xl md:text-8xl font-normal tracking-tighter text-white">
             <span>{progress.toString().padStart(2, '0')}</span>
-            <span className="text-2xl sm:text-3xl text-[var(--page-background)] font-light">%</span>
+            <span className="text-2xl sm:text-3xl text-white/50 font-light">%</span>
           </div>
 
           {/* Minimalist Progress Meter Bar */}
           <div className="w-48 sm:w-64 h-[2px] bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[var(--page-background)] transition-all duration-100 ease-out rounded-full"
+              className="h-full bg-white/80 transition-all duration-100 ease-out rounded-full"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -331,8 +345,8 @@ export function CurtainLoader() {
         {/* Bottom Tagline & Stacks */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/10 pt-4 text-[11px] sm:text-xs font-mono text-white/60">
           <span>Android · Kotlin · Flutter · Next.js · Laravel</span>
-          <span className="text-[var(--contrast-background)] uppercase tracking-wider">
-            Unveiling Workspace
+          <span className="text-white/40 uppercase tracking-wider">
+            Loading Workspace
           </span>
         </div>
       </div>
