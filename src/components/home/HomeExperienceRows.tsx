@@ -13,7 +13,7 @@ export function HomeExperienceRows({ experiences }: HomeExperienceRowsProps) {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] space-y-6 shadow-xs">
+    <div className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6 shadow-xs">
       <div className="flex items-center justify-between pb-2">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">
           {lang === 'id' ? 'Pengalaman Kerja' : 'Career Timeline'}

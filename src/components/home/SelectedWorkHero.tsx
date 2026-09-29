@@ -54,31 +54,31 @@ export function SelectedWorkHero({ projects }: SelectedWorkHeroProps) {
     if (!heroContainerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // 1. Animate Slide Image with directional zoom & blur reveal
+      // 1. Animate Slide Image with cinematic reveal (scale, blur + fade)
       if (slideImageRef.current) {
         gsap.fromTo(
           slideImageRef.current,
           {
-            opacity: 0.25,
-            scale: 1.07,
-            x: direction * 35,
-            filter: 'blur(6px)',
+            opacity: 0,
+            scale: 1.12,
+            x: direction * 40,
+            filter: 'blur(12px)',
           },
           {
             opacity: 1,
             scale: 1,
             x: 0,
             filter: 'blur(0px)',
-            duration: 0.9,
-            ease: 'power3.out',
+            duration: 1.2,
+            ease: 'expo.out',
           }
         );
 
-        // Continuous subtle ambient drift while reading
+        // Slow ambient drift while viewing
         gsap.to(slideImageRef.current, {
-          scale: 1.03,
-          duration: SLIDE_DURATION,
-          ease: 'sine.out',
+          scale: 1.04,
+          duration: SLIDE_DURATION + 1,
+          ease: 'sine.inOut',
         });
       }
 

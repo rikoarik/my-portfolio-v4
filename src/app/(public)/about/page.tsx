@@ -26,7 +26,7 @@ export default async function AboutPage() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--layout-gap)] items-start">
       {/* LEFT COLUMN: Sticky Portrait Showcase */}
-      <div className="relative w-full h-[450px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)]">
+      <div className="relative w-full h-[450px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)]">
         <Image
           src={profile.avatar_url || '/images/profile/ark.jpg'}
           alt={`${profile.full_name} - ${profile.title}`}
@@ -55,7 +55,7 @@ export default async function AboutPage() {
       {/* RIGHT COLUMN: Bio, Experience, Competencies */}
       <div className="space-y-[var(--layout-gap)] min-w-0">
         {/* Bio Card */}
-        <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
+        <article className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6">
           <div className="space-y-1">
             <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-secondary)]">
               Engineering Biography
@@ -78,7 +78,7 @@ export default async function AboutPage() {
           </div>
 
           {/* Quick Action Buttons */}
-          <div className="pt-4 flex flex-wrap gap-3 border-t border-[var(--surface-border)]">
+          <div className="pt-4 flex flex-wrap gap-3 border-t border-white/15">
             <a
               href={`mailto:${profile.email}`}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--contrast-background)] text-[var(--contrast-text)] text-xs font-medium hover:opacity-90 transition-opacity"
@@ -99,8 +99,8 @@ export default async function AboutPage() {
         </article>
 
         {/* Experience Timeline Card */}
-        <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
-          <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
+        <article className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6">
+          <div className="flex items-center justify-between border-b border-white/15 pb-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               Work Experience
             </h2>
@@ -113,7 +113,7 @@ export default async function AboutPage() {
             {experiences.map((exp) => (
               <div
                 key={exp.id}
-                className="space-y-2 border-b border-[var(--surface-border)] pb-6 last:border-b-0 last:pb-0"
+                className="space-y-2 border-b border-white/10 pb-6 last:border-b-0 last:pb-0"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <div className="flex items-center gap-2">
@@ -146,8 +146,8 @@ export default async function AboutPage() {
         </article>
 
         {/* Technical Competencies Card */}
-        <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
-          <div className="flex items-center justify-between border-b border-[var(--surface-border)] pb-4">
+        <article className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6">
+          <div className="flex items-center justify-between border-b border-white/15 pb-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               Competencies & Tools
             </h2>

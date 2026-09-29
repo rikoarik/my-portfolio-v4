@@ -31,7 +31,7 @@ export function HomeCapabilitiesCard({ groups }: HomeCapabilitiesCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] space-y-6 shadow-xs"
+      className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6 shadow-xs"
     >
       <div className="flex items-center justify-between pb-2">
         <h2 className="text-sm font-medium text-[var(--text-primary)]">

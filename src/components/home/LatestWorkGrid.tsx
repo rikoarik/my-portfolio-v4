@@ -20,7 +20,7 @@ export function LatestWorkGrid({ projects }: LatestWorkGridProps) {
   return (
     <div className="space-y-[var(--layout-gap)]">
       {/* Header Card */}
-      <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] flex items-center justify-between shadow-xs">
+      <div className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] flex items-center justify-between shadow-xs">
         <div className="flex items-center gap-2 text-sm text-[var(--text-primary)]">
           <span className="font-medium">{t('home.latest_work')}</span>
           <ArrowDown className="w-3.5 h-3.5 text-[var(--accent-teal)]" />

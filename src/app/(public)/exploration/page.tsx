@@ -46,7 +46,7 @@ export default async function ExplorationPage() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--layout-gap)] items-start">
       {/* LEFT COLUMN: Sticky Exploration Hero Banner */}
-      <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)]">
+      <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)]">
         <Image
           src="/images/projects/puas-hub/cover.svg"
           alt="Engineering Exploration Showcase"
@@ -77,7 +77,7 @@ export default async function ExplorationPage() {
       {/* RIGHT COLUMN: Intro Card & Exploration Gallery */}
       <div className="space-y-[var(--layout-gap)] min-w-0">
         {/* Intro Card */}
-        <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
+        <div className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-6">
           <h1 className="text-3xl sm:text-4xl font-normal text-[var(--text-primary)] tracking-tight">
             Exploration
           </h1>

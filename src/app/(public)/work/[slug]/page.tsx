@@ -88,7 +88,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--layout-gap)] items-start">
       {/* LEFT COLUMN: Sticky Hero Showcase */}
-      <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)]">
+      <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)]">
         {project.cover_image_url ? (
           <Image
             src={project.cover_image_url}
@@ -151,7 +151,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       {/* RIGHT COLUMN: Editorial Narrative Stack */}
       <div className="space-y-[var(--layout-gap)] min-w-0">
         {/* Intro Card */}
-        <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-6">
+        <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-6">
           <div className="space-y-2">
             <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-secondary)]">
               {project.role}
@@ -173,7 +173,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         {/* Project Metadata Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-[var(--layout-gap)]">
-          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex flex-col justify-center space-y-1">
+          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] glass-card flex flex-col justify-center space-y-1">
             <span className="text-[11px] font-mono text-[var(--text-secondary)] uppercase">
               Role
             </span>
@@ -182,7 +182,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </span>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex flex-col justify-center space-y-1">
+          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] glass-card flex flex-col justify-center space-y-1">
             <span className="text-[11px] font-mono text-[var(--text-secondary)] uppercase">
               Timeline
             </span>
@@ -191,7 +191,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </span>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex flex-col justify-center space-y-1">
+          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] glass-card flex flex-col justify-center space-y-1">
             <span className="text-[11px] font-mono text-[var(--text-secondary)] uppercase">
               Type
             </span>
@@ -200,7 +200,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </span>
           </div>
 
-          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] flex flex-col justify-center space-y-1">
+          <div className="p-4 sm:p-5 rounded-[var(--card-radius)] glass-card flex flex-col justify-center space-y-1">
             <span className="text-[11px] font-mono text-[var(--text-secondary)] uppercase">
               Stack
             </span>
@@ -212,7 +212,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         {/* Case Study Sections */}
         {contextSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {contextSec.title || 'Problem & Context'}
             </h2>
@@ -223,7 +223,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {roleSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {roleSec.title || 'Role & Responsibilities'}
             </h2>
@@ -234,7 +234,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {decisionsSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {decisionsSec.title || 'System & Technical Decisions'}
             </h2>
@@ -245,7 +245,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {builtSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {builtSec.title || 'Core Implementation'}
             </h2>
@@ -256,7 +256,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {integrationsSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {integrationsSec.title || 'Integrations & Protocols'}
             </h2>
@@ -267,7 +267,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {challengesSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {challengesSec.title || 'Challenges & Practical Solutions'}
             </h2>
@@ -278,7 +278,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         )}
 
         {resultSec && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               {resultSec.title || 'Results & Practical Delivery'}
             </h2>
@@ -290,7 +290,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         {/* Technology Stack Card */}
         {project.technologies && project.technologies.length > 0 && (
-          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+          <article className="p-[var(--content-padding)] rounded-[var(--card-radius)] glass-card space-y-4">
             <h2 className="text-lg font-medium text-[var(--text-primary)]">
               Technology Stack
             </h2>
@@ -298,14 +298,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {project.technologies.map((t) => (
                 <span
                   key={t.id || t.technology}
-                  className="px-3 py-1.5 rounded-md text-xs font-mono bg-[var(--page-background)] border border-[var(--surface-border)] text-[var(--text-primary)]"
+                  className="px-3 py-1.5 rounded-md text-xs font-mono bg-[var(--page-background)] border border-white/15 text-[var(--text-primary)]"
                 >
                   {t.technology}
                 </span>
               ))}
             </div>
             {stackSec && (
-              <div className="text-sm text-[var(--text-secondary)] pt-2 border-t border-[var(--surface-border)]">
+              <div className="text-sm text-[var(--text-secondary)] pt-2 border-t border-white/15">
                 <MarkdownContent content={stackSec.body_md} />
               </div>
             )}
@@ -316,7 +316,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         {nextProject && nextProject.slug !== slug && (
           <Link
             href={`/work/${nextProject.slug}`}
-            className="interactive-card p-6 sm:p-8 rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group block"
+            className="interactive-card p-6 sm:p-8 rounded-[var(--card-radius)] glass-card hover:bg-[var(--surface-hover)] transition-all flex items-center justify-between group block"
           >
             <div className="space-y-1">
               <span className="text-xs font-mono uppercase text-[var(--text-secondary)]">

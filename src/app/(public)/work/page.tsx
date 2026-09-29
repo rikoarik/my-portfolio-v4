@@ -20,7 +20,7 @@ export default async function WorkPage() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--layout-gap)] items-start">
       {/* LEFT COLUMN: Sticky Featured Highlight */}
-      <div className="relative w-full h-[450px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)]">
+      <div className="relative w-full h-[450px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)]">
         {featured?.cover_image_url ? (
           <Image
             src={featured.cover_image_url}
@@ -58,7 +58,7 @@ export default async function WorkPage() {
       {/* RIGHT COLUMN: Intro Card & Project Gallery */}
       <div className="space-y-[var(--layout-gap)] min-w-0">
         {/* Intro Card */}
-        <div className="p-[var(--content-padding)] rounded-[var(--card-radius)] bg-[var(--surface)] border border-[var(--surface-border)] space-y-4">
+        <div className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-4">
           <h1 className="text-3xl sm:text-4xl font-normal text-[var(--text-primary)] tracking-tight">
             Selected Work
           </h1>
@@ -73,7 +73,7 @@ export default async function WorkPage() {
             <Link
               key={project.id || project.slug}
               href={`/work/${project.slug}`}
-              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)] block group focus-visible:outline-none"
+              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)] block group focus-visible:outline-none"
             >
               {/* Top-Left Inverted Cutout Badge with Expanding Arrow */}
               <div className="card-badge-top-left">

@@ -45,7 +45,7 @@ export function ExplorationGallery({ items }: ExplorationGalleryProps) {
             <CardWrapper
               href={item.link}
               {...extraProps}
-              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface)] border border-[var(--surface-border)] block group focus-visible:outline-none shadow-md"
+              className="interactive-card relative aspect-[3/4] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)] block group focus-visible:outline-none shadow-md"
             >
               {/* Top-Left Inverted Cutout Badge with Expanding Arrow */}
               <div className="card-badge-top-left">
