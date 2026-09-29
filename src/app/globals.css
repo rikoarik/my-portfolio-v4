@@ -12,30 +12,27 @@
   --content-padding: 32px;
   --header-corner: 20px;
 
-  /* Color Hunt Palette: #249D8F, #E9C46A, #E76F51, #FDF0D5 */
-  --page-background: #fdf0d5;
-  --text-primary: #1a2421;
-  --text-secondary: rgba(26, 36, 33, 0.55);
-  --surface: rgba(244, 229, 195, 0.65);
-  --surface-solid: #f4e5c3;
-  --surface-hover: rgba(238, 219, 184, 0.75);
-  --surface-border: transparent;
-  --switch-track: rgba(234, 214, 170, 0.7);
-  /* Primary action surface. Teal is the brand's primary, so the highest-
-     emphasis controls carry it rather than the near-black. Text on it is
-     ink, not cream: cream on #249d8f is only 2.96:1 and fails WCAG AA,
-     while ink clears it at 4.77:1. */
-  --contrast-background: #249d8f;
-  --contrast-background-hover: #3ab3a3;
-  --contrast-text: #1a2421;
+  /* Palette: Coral #FF7F50 Background, Obsidian Glass Cards & Ochre Gold #C49A45 Accents */
+  --page-background: #FF7F50;
+  --text-primary: #f8fafc;
+  --text-secondary: rgba(248, 250, 252, 0.68);
+  --surface: rgba(18, 22, 26, 0.86);
+  --surface-solid: #121619;
+  --surface-hover: rgba(28, 34, 40, 0.95);
+  --surface-border: rgba(255, 255, 255, 0.12);
+  --switch-track: rgba(255, 255, 255, 0.16);
+
+  /* Primary action surface (Warm Ochre Gold with dark ink text) */
+  --contrast-background: #C49A45;
+  --contrast-background-hover: #d8aa4e;
+  --contrast-text: #121619;
 
   /* Brand Accents */
-  --accent-teal: #249d8f;
-  --accent-cyan: #249d8f;
-  --accent-blue: #249d8f;
-  --accent-gold: #e9c46a;
-  --accent-coral: #e76f51;
-  --accent-glow: rgba(36, 157, 143, 0.25);
+  --accent-teal: #C49A45;
+  --accent-cyan: #C49A45;
+  --accent-blue: #C49A45;
+  --accent-coral: #FF7F50;
+  --accent-glow: rgba(196, 154, 69, 0.25);
 }
 
 /* Base resets & typography */
@@ -95,10 +92,10 @@ html.lenis, html.lenis body {
 
 /* Glassmorphism card base */
 .glass-card {
-  background: rgba(244, 229, 195, 0.55);
-  backdrop-filter: blur(16px) saturate(1.6);
-  -webkit-backdrop-filter: blur(16px) saturate(1.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(18, 22, 26, 0.86);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Viewport Frame with 4 corners */
@@ -154,6 +151,7 @@ html.lenis, html.lenis body {
   gap: 16px;
   width: fit-content;
   background: var(--page-background);
+  color: #121619;
   border-bottom-right-radius: var(--header-corner);
   padding: 4px 16px 12px 16px;
   font-size: 14px;
@@ -189,10 +187,11 @@ html.lenis, html.lenis body {
   left: 0;
   z-index: 3;
   background: var(--page-background);
-  color: var(--text-primary);
+  color: #121619;
   border-bottom-right-radius: 18px;
   padding: 8px 16px 12px 16px;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.2;
   white-space: nowrap;
   display: flex;
@@ -229,10 +228,11 @@ html.lenis, html.lenis body {
   right: 0;
   z-index: 3;
   background: var(--page-background);
-  color: var(--text-primary);
+  color: #121619;
   border-top-left-radius: 18px;
   padding: 10px 16px 8px 16px;
   font-size: 14px;
+  font-weight: 500;
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -263,7 +263,7 @@ html.lenis, html.lenis body {
 
 /* Minimal textless language switch pill (matching previous appearance switch) */
 .lang-switch {
-  background: var(--switch-track);
+  background: rgba(18, 22, 26, 0.18);
   cursor: pointer;
   border-radius: 999px;
   width: 32px;
@@ -276,7 +276,7 @@ html.lenis, html.lenis body {
 }
 
 .lang-switch:after {
-  background: var(--text-primary);
+  background: #121619;
   content: "";
   border-radius: 50%;
   width: 8px;
@@ -300,10 +300,10 @@ html.lenis, html.lenis body {
 
 .social-card {
   border-radius: var(--card-radius);
-  background: rgba(244, 229, 195, 0.55);
-  backdrop-filter: blur(16px) saturate(1.6);
-  -webkit-backdrop-filter: blur(16px) saturate(1.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(18, 22, 26, 0.86);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   min-height: 58px;
   color: var(--text-primary);
   justify-content: space-between;
@@ -316,8 +316,8 @@ html.lenis, html.lenis body {
 }
 
 .social-card:hover {
-  background: rgba(238, 219, 184, 0.75);
-  box-shadow: 0 4px 16px -4px rgba(36, 157, 143, 0.12);
+  background: rgba(28, 34, 40, 0.95);
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.5);
 }
 
 /* Primary action card. The base .social-card border is a light hairline that
@@ -379,7 +379,7 @@ html.lenis, html.lenis body {
 }
 
 .interactive-card:hover {
-  box-shadow: 0 16px 32px -8px rgba(36, 157, 143, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 32px -8px rgba(35, 157, 143, 0.15), 0 8px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 .interactive-card:hover .card-badge-top-left,

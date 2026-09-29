@@ -31,7 +31,7 @@ export function Header({}: HeaderProps) {
         {/* Brand with Ark's actual photo */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-[var(--text-primary)] hover:opacity-85 transition-opacity"
+          className="flex items-center gap-2 text-[#121619] hover:opacity-80 transition-opacity"
           aria-label="Ark Homepage"
         >
           <div className="relative w-4 h-4 rounded-full overflow-hidden shrink-0 shadow-xs">
@@ -44,11 +44,11 @@ export function Header({}: HeaderProps) {
               priority
             />
           </div>
-          <span className="font-medium text-[15px] tracking-tight text-[var(--text-primary)]">Ark</span>
+          <span className="font-semibold text-[15px] tracking-tight text-[#121619]">Ark</span>
         </Link>
 
         {/* Primary Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-5 text-sm text-[var(--text-secondary)]">
+        <nav className="hidden md:flex items-center gap-5 text-sm text-[#121619]/75">
           {navLinks.map((link) => {
             const isActive =
               link.href === '/'
@@ -58,8 +58,8 @@ export function Header({}: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`transition-colors hover:text-[var(--text-primary)] ${
-                  isActive ? 'text-[var(--text-primary)] font-medium' : ''
+                className={`transition-colors hover:text-[#121619] ${
+                  isActive ? 'text-[#121619] font-bold' : ''
                 }`}
               >
                 {link.label}
@@ -82,7 +82,7 @@ export function Header({}: HeaderProps) {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-xs uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors px-1 py-0.5"
+            className="md:hidden text-xs uppercase tracking-wider text-[#121619]/80 hover:text-[#121619] font-medium transition-colors px-1 py-0.5"
             aria-label="Toggle mobile menu"
           >
             {mobileOpen ? t('nav.close') : t('nav.menu')}

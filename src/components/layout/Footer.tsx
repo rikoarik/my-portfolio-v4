@@ -10,7 +10,7 @@ interface FooterProps {
 
 export function Footer({
   fullName = 'Arik Riko Prasetya',
-  githubUrl = 'https://github.com/arikriko',
+  githubUrl = 'https://github.com/rikoarik',
   linkedinUrl = 'https://linkedin.com/in/arikriko',
   email = 'arikrikoprasetya@gmail.com',
 }: FooterProps) {

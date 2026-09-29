@@ -13,7 +13,7 @@ export function ContactSection({
   heading = 'Let’s build something useful.',
   body = 'Open to software engineering opportunities across mobile, backend, and full-stack development.',
   email = 'arikrikoprasetya@gmail.com',
-  githubUrl = 'https://github.com/arikriko',
+  githubUrl = 'https://github.com/rikoarik',
   linkedinUrl = 'https://linkedin.com/in/arikriko',
   resumeUrl = '/resume/Arik_Riko_Prasetya_Software_Engineer.pdf',
 }: ContactSectionProps) {

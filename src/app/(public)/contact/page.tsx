@@ -43,7 +43,7 @@ export default function ContactPage() {
   const socials = [
     {
       label: 'GitHub',
-      href: 'https://github.com/arikriko',
+      href: 'https://github.com/rikoarik',
       isExternal: true,
       icon: <GithubIcon />,
     },

@@ -19,7 +19,7 @@ const getLanguageDotColor = (name: string): string => {
   if (lower.includes('postgresql') || lower.includes('sql')) return '#336791';
   if (lower.includes('node') || lower.includes('fastify')) return '#5FA04E';
   if (lower.includes('php') || lower.includes('laravel')) return '#FF2D20';
-  return '#249D8F';
+  return '#239D8F';
 };
 
 export function HomeCapabilitiesCard({ groups }: HomeCapabilitiesCardProps) {

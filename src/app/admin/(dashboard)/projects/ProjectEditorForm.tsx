@@ -507,7 +507,7 @@ export function ProjectEditorForm({
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
               className="w-full px-3.5 py-2.5 rounded-lg bg-[#09090B] border border-[#27272A] text-white text-sm focus:outline-none focus:border-[#3B82F6]"
-              placeholder="https://github.com/arikriko/..."
+              placeholder="https://github.com/rikoarik/..."
             />
           </div>
 

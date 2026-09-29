@@ -18,7 +18,7 @@ export default async function PublicLayout({
     jobTitle: profile.title,
     url: profile.website_url || 'https://arikriko.com',
     sameAs: [
-      profile.github_url || 'https://github.com/arikriko',
+      profile.github_url || 'https://github.com/rikoarik',
       profile.linkedin_url || 'https://linkedin.com/in/arikriko',
     ].filter(Boolean),
     knowsAbout: [

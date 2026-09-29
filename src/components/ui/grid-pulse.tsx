@@ -23,10 +23,10 @@ export type GridPulseProps = Omit<
   avoid?: string;
 };
 
-/** Hue at the top of the field and how far it turns by the bottom: yellow,
- *  through orange, red, magenta and blue, to green. */
-const HUE_TOP = 60;
-const HUE_SPAN = 270;
+/** Hue at the top of the field and how far it turns by the bottom: teal
+ *  through cyan, blue, violet, to coral. */
+const HUE_TOP = 175;
+const HUE_SPAN = 160;
 /**
  * Each cell takes one of these lightnesses, so a sweep reads as a field of
  * tints rather than one flat colour. On a dark ground the pale end of the
