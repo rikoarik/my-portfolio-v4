@@ -276,58 +276,58 @@ export default async function AboutPage() {
 
           <div className="social-stack about-social-stack">
             <a
-              className="social-card"
+              className="social-card group"
               href={profile.github_url || 'https://github.com/rikoarik'}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>GitHub</span>
-              <span className="social-card__icons">
-                <span className="social-card__icon flex items-center justify-center">
+              <span className="flex items-center gap-2.5 min-w-0">
+                <span className="social-card__lead-icon flex items-center justify-center shrink-0">
                   <GithubIcon />
                 </span>
-                <span className="social-card__icon social-card__icon--arrow flex items-center justify-center">
+                <span className="font-normal truncate">GitHub</span>
+                <span className="social-card__arrow-inline flex items-center justify-center shrink-0">
                   <ArrowUpRightIcon />
                 </span>
               </span>
             </a>
             <a
-              className="social-card"
+              className="social-card group"
               href={profile.linkedin_url || 'https://linkedin.com/in/arikriko'}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>LinkedIn</span>
-              <span className="social-card__icons">
-                <span className="social-card__icon flex items-center justify-center">
+              <span className="flex items-center gap-2.5 min-w-0">
+                <span className="social-card__lead-icon flex items-center justify-center shrink-0">
                   <LinkedinIcon />
                 </span>
-                <span className="social-card__icon social-card__icon--arrow flex items-center justify-center">
+                <span className="font-normal truncate">LinkedIn</span>
+                <span className="social-card__arrow-inline flex items-center justify-center shrink-0">
                   <ArrowUpRightIcon />
                 </span>
               </span>
             </a>
             <a
-              className="social-card"
+              className="social-card group"
               href={`mailto:${profile.email || 'arikrikoprasetya@gmail.com'}`}
             >
-              <span>Email</span>
-              <span className="social-card__icons">
-                <span className="social-card__icon flex items-center justify-center">
+              <span className="flex items-center gap-2.5 min-w-0">
+                <span className="social-card__lead-icon flex items-center justify-center shrink-0">
                   <MailIcon />
                 </span>
-                <span className="social-card__icon social-card__icon--arrow flex items-center justify-center">
+                <span className="font-normal truncate">Email</span>
+                <span className="social-card__arrow-inline flex items-center justify-center shrink-0">
                   <ArrowUpRightIcon />
                 </span>
               </span>
             </a>
-            <Link className="social-card social-card--contact" href="/contact">
-              <span>Contact Me</span>
-              <span className="social-card__icons">
-                <span className="social-card__icon flex items-center justify-center">
+            <Link className="social-card social-card--contact group" href="/contact">
+              <span className="flex items-center gap-2.5 min-w-0">
+                <span className="social-card__lead-icon flex items-center justify-center shrink-0">
                   <SendIcon />
                 </span>
-                <span className="social-card__icon social-card__icon--arrow flex items-center justify-center">
+                <span className="font-medium truncate">Contact Me</span>
+                <span className="social-card__arrow-inline flex items-center justify-center shrink-0">
                   <ArrowUpRightIcon />
                 </span>
               </span>

@@ -854,12 +854,6 @@ html.lenis, html.lenis body {
   min-width: 0;
 }
 
-@media (min-width: 768px) {
-  .about-content {
-    padding-top: 24px;
-  }
-}
-
 /* Profile + Social in About */
 .about-profile-social {
   display: grid;
@@ -896,7 +890,44 @@ html.lenis, html.lenis body {
   }
   .about-social-stack .social-card {
     height: auto;
+    justify-content: flex-start;
+    padding: 0 18px;
   }
+}
+
+.about-social-stack .social-card__lead-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--text-secondary);
+  transition: color 0.16s ease, transform 0.2s ease;
+}
+
+.about-social-stack .social-card:hover .social-card__lead-icon {
+  color: var(--text-primary);
+  transform: scale(1.08);
+}
+
+.about-social-stack .social-card--contact .social-card__lead-icon {
+  color: currentColor;
+}
+
+.about-social-stack .social-card__arrow-inline {
+  width: 14px;
+  height: 14px;
+  color: var(--text-secondary);
+  opacity: 0.55;
+  transition: opacity 0.16s ease, transform 0.2s ease, color 0.16s ease;
+}
+
+.about-social-stack .social-card:hover .social-card__arrow-inline {
+  opacity: 1;
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
+.about-social-stack .social-card--contact .social-card__arrow-inline {
+  color: currentColor;
+  opacity: 0.85;
 }
 
 .about-profile-card {
