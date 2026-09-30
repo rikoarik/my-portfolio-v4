@@ -1324,6 +1324,220 @@ html.lenis, html.lenis body {
   transform: translateY(-18px);
 }
 
+/* ==========================================================================
+   Exploration Page - Julian-style Structure (Anti-Slop Clean)
+   ========================================================================== */
+
+.exploration-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .exploration-page {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.exploration-hero {
+  aspect-ratio: 61/70;
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+@media (min-width: 810px) {
+  .exploration-hero {
+    aspect-ratio: auto;
+    height: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .exploration-hero {
+    top: var(--page-inset);
+    height: calc(100svh - (var(--page-inset) * 2));
+    position: sticky;
+  }
+}
+
+.exploration-hero__image {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.exploration-hero__caption {
+  z-index: 2;
+  background: var(--page-background);
+  color: var(--text-primary);
+  border-top-left-radius: var(--header-corner);
+  min-height: 36px;
+  padding: 8px 16px 4px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.exploration-hero__caption:before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 0% 0%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+.exploration-hero__caption:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -18px;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 0% 0%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+.exploration-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gap);
+  min-width: 0;
+}
+
+.exploration-intro {
+  padding: var(--content-padding);
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  gap: 24px;
+}
+
+.exploration-intro h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.exploration-intro p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.exploration-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--layout-gap);
+}
+
+@media (min-width: 640px) {
+  .exploration-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.exploration-card {
+  border-radius: var(--card-radius);
+  background: var(--surface);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  height: 380px;
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--surface-border);
+  transition: border-color 0.2s ease;
+}
+
+.exploration-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.exploration-card__image {
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.exploration-card:hover .exploration-card__image {
+  transform: scale(1.03);
+}
+
+.exploration-card__title {
+  z-index: 2;
+  background: var(--page-background);
+  color: var(--text-primary);
+  border-bottom-right-radius: var(--header-corner);
+  padding: 6px 14px 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.exploration-card__title:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 100% 100%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+.exploration-card__title:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 100% 100%, transparent 17.5px, var(--page-background) 18px);
+  pointer-events: none;
+}
+
+.exploration-card__arrow {
+  width: 13px;
+  height: 13px;
+  color: var(--text-secondary);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.exploration-card:hover .exploration-card__arrow {
+  color: var(--text-primary);
+  transform: translate(2px, -2px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

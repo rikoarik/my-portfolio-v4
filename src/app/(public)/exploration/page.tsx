@@ -1,91 +1,98 @@
 import React from 'react';
 import Image from 'next/image';
-import { getFeaturedRepositories } from '@/lib/data/portfolio';
-import { ExplorationGallery } from '@/components/exploration/ExplorationGallery';
+import { ExplorationGallery, type ExplorationItem } from '@/components/exploration/ExplorationGallery';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Exploration · Arik Riko Prasetya — Lab & Open Source',
+  title: 'Exploration · Arik Riko Prasetya : Engineering Lab',
   description:
-    'A collection of open-source architectures, experiments, and technical prototypes exploring mobile, backend, and full-stack systems.',
+    'A curated collection of micro-experiments, protocol implementations, and technical prototypes exploring mobile architectures, hardware communication, and full-stack systems.',
   alternates: {
     canonical: 'https://arklabs.my.id/exploration',
   },
 };
 
-const REPO_IMAGES: Record<string, string> = {
-  'Frontend-Lembar': '/images/projects/lembar/cover.webp',
-  'Backend-Lembar': '/images/projects/lembar/cover.webp',
-  'crm-frontend': '/images/projects/crm-platform/cover.webp',
-  'crm-backend': '/images/projects/crm-platform/cover.webp',
-  'Puas-app': '/images/projects/puas-hub/cover.webp',
-  'ExploreBojonegoro': '/images/projects/explore-bojonegoro/cover.webp',
-  'nara-app': '/images/projects/merchant-payment-platform/cover.webp',
-  'nara-api': '/images/projects/member-app-ecosystem/cover.webp',
-};
+const EXPLORATION_ITEMS: ExplorationItem[] = [
+  {
+    id: 'exp-thermal-pos',
+    title: 'Thermal Bluetooth Protocol',
+    category: 'Hardware & Mobile',
+    description: 'Custom ESC/POS binary command stream encoder and Bluetooth LE serial driver for mobile receipt printers.',
+    image_url: '/images/exploration/thermal-pos.webp',
+    link: 'https://github.com/rikoarik/Puas-app',
+  },
+  {
+    id: 'exp-nfc-reader',
+    title: 'NFC ISO 14443 Reader',
+    category: 'Hardware & IoT',
+    description: 'Contactless smartcard APDU command processor and Mifare card sector reader for high-throughput mobile verification.',
+    image_url: '/images/exploration/nfc-reader.webp',
+    link: 'https://github.com/rikoarik',
+  },
+  {
+    id: 'exp-offline-sync',
+    title: 'Offline-First Sync Engine',
+    category: 'Distributed Systems',
+    description: 'Two-way delta reconciliation engine with local SQLite storage, mutation queues, and automatic vector clock merge.',
+    image_url: '/images/exploration/offline-sync.webp',
+    link: 'https://github.com/rikoarik/crm-frontend',
+  },
+  {
+    id: 'exp-realtime-pos',
+    title: 'Realtime POS State Stream',
+    category: 'Real-time & Telemetry',
+    description: 'Sub-second multi-terminal transaction sync pipeline powered by WebSocket state distribution and conflict-free replicas.',
+    image_url: '/images/exploration/realtime-pos.webp',
+    link: 'https://github.com/rikoarik/crm-backend',
+  },
+  {
+    id: 'exp-qris-parser',
+    title: 'QRIS EMVCo Payload Parser',
+    category: 'Fintech & Security',
+    description: 'High-speed Tag-Length-Value (TLV) QRIS specification decoder validating EMVCo CRC-16 checksums directly on client devices.',
+    image_url: '/images/exploration/qris-parser.webp',
+    link: 'https://github.com/rikoarik/Frontend-Lembar',
+  },
+  {
+    id: 'exp-clean-flutter',
+    title: 'Clean Architecture Core',
+    category: 'Mobile Architecture',
+    description: 'Production-ready Flutter foundation featuring reactive BLoC state isolation, declarative routing, and strict layer decoupling.',
+    image_url: '/images/exploration/clean-flutter.webp',
+    link: 'https://github.com/rikoarik/ExploreBojonegoro',
+  },
+];
 
-export default async function ExplorationPage() {
-  const repositories = await getFeaturedRepositories(false);
-
-  const explorationItems = repositories.map((r) => {
-    const title = r.title_override || r.repo_full_name.split('/')[1] || r.repo_full_name;
-    return {
-      id: r.id,
-      title,
-      category: 'Open Source',
-      description: r.description_override || 'Open-source experiment and architecture.',
-      image_url: REPO_IMAGES[title] || '/images/projects/member-app-ecosystem/cover.webp',
-      link: r.url || `https://github.com/${r.repo_full_name}`,
-      isExternal: true,
-      tag: r.language || 'Code',
-    };
-  });
-
+export default function ExplorationPage() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-[var(--layout-gap)] items-start">
+    <div className="exploration-page">
       {/* LEFT COLUMN: Sticky Exploration Hero Banner */}
-      <div className="relative w-full h-[400px] lg:h-[calc(100svh-24px)] lg:sticky lg:top-[var(--page-inset)] rounded-[var(--card-radius)] overflow-hidden bg-[var(--surface-solid)]">
+      <figure className="exploration-hero">
         <Image
-          src="/images/projects/member-app-ecosystem/cover.webp"
+          src="/images/exploration/hero.webp"
           alt="Engineering Exploration Showcase"
           fill
           priority
-          className="object-cover object-center"
+          className="exploration-hero__image"
           sizes="(min-width: 1024px) 50vw, 100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
-
-        <div className="absolute bottom-8 left-8 z-10 max-w-sm space-y-2">
-          <span className="text-xs font-mono uppercase tracking-widest text-white/70">
-            Open Source & Lab
-          </span>
-          <p className="text-sm text-white/80 leading-relaxed font-light">
-            Architectural prototypes, open-source repositories, and experimental codebases spanning mobile systems, APIs, and developer utilities.
-          </p>
-        </div>
-
-        {/* Bottom-Right Inverted Cutout Badge */}
-        <div className="card-badge-bottom-right">
-          <span className="font-medium text-xs tracking-tight">
-            Engineering Lab
-          </span>
-        </div>
-      </div>
+        <figcaption className="exploration-hero__caption">
+          Engineering Lab
+        </figcaption>
+      </figure>
 
       {/* RIGHT COLUMN: Intro Card & Exploration Gallery */}
-      <div className="space-y-[var(--layout-gap)] min-w-0">
+      <div className="exploration-content">
         {/* Intro Card */}
-        <div className="glass-card p-[var(--content-padding)] rounded-[var(--card-radius)] space-y-4">
-          <h1 className="text-3xl sm:text-4xl font-normal text-[var(--text-primary)] tracking-tight">
-            Exploration
-          </h1>
-          <p className="text-[15px] sm:text-base text-[var(--text-secondary)] leading-relaxed font-light">
-            A curated collection of open-source architectures, experiments, and technical prototypes where I test emerging frameworks, engineer client/server utilities, and share practical codebases with the community.
+        <section className="exploration-intro">
+          <h1>Exploration</h1>
+          <p>
+            A curated collection of micro-experiments, protocol implementations, and technical prototypes exploring mobile architectures, hardware communication, and full-stack systems.
           </p>
-        </div>
+        </section>
 
-        {/* Exploration Gallery Grid with Motion */}
-        <ExplorationGallery items={explorationItems} />
+        {/* Exploration Gallery Grid with Clean Motion */}
+        <ExplorationGallery items={EXPLORATION_ITEMS} />
       </div>
     </div>
   );
